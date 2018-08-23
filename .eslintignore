@@ -1,0 +1,4 @@
+/*.js
+/cfg/*.js
+/mock/**/*.js
+src/router.js

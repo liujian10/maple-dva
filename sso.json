@@ -1,0 +1,27 @@
+{
+    "accounts": [
+        {
+            "username": "liujian02",
+            "password": "123"
+        }, {
+            "username": "yf-yuchangchun",
+            "password": "123"
+        }, {
+            "username": "zhangzhuqing",
+            "password": "123"
+        }, {
+            "username": "denghongli",
+            "password": "123"
+        }, {
+            "username": "yuhui",
+            "password": "123"
+        }, {
+            "username": "qinjian",
+            "password": "123"
+        }
+    ],
+    "commons": {
+        "loginUrl": "http://172.16.116.136:9091/cas/login",
+        "serviceUrl": "http://172.16.116.136:19062/api/cms/message/loadAllOrgTree"
+    }
+}
