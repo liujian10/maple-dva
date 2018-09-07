@@ -13,7 +13,7 @@
 .welcome {
     height: 300px;
     background: url(../assets/yay.jpg) no-repeat center 0;
-    background-size: 3.88rem 3.28rem;
+    background-size: auto 100%;
 }
 
 .list {

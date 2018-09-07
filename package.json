@@ -21,8 +21,9 @@
         ]
     },
     "dependencies": {
-        "dva": "^2.3.1",
+        "dva": "^2.4.0",
         "dva-loading": "^2.0.3",
+        "history": "^4.7.2",
         "install": "^0.12.1",
         "lodash": "^4.17.10",
         "prop-types": "^15.6.2",
@@ -46,7 +47,7 @@
         "lint-staged": "^7.2.0",
         "postcss-pxtorem": "^4.0.1",
         "redbox-react": "^1.4.3",
-        "roadhog": "^2.0.0",
+        "roadhog": "^2.4.5",
         "stylint": "^1.5.9",
         "yaml-loader": "^0.5.0"
     }

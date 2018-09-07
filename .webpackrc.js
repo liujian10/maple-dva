@@ -1,17 +1,17 @@
-const pxtorem = require('postcss-pxtorem');
+// const pxtorem = require('postcss-pxtorem')
 export default {
-    extraPostCSSPlugins: [
-        pxtorem({
-            rootValue: 75,
-            propWhiteList: [],
-        }),
-    ],
+    //    extraPostCSSPlugins: [
+    //        pxtorem({
+    //            rootValue: 75,
+    //            propWhiteList: [],
+    //        }),
+    //    ],
     extraBabelPlugins: [
         ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': 'css' }],
     ],
-    hash:true,
+    hash: true,
     html: {
-        "template": "./public/index.ejs"
+        'template': './public/index.ejs',
     },
     proxy: {
         '/~': {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'dva'
 
-class Products extends React.Component {
+class Route extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -17,8 +17,4 @@ class Products extends React.Component {
     }
 }
 
-// export default Products;
-export default connect(({ products = {}, routing }) => ({
-    ...products,
-    ...routing,
-}))(Products)
+export default connect(({ routing }) => ({ ...routing }))(Route)
