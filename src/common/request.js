@@ -1,5 +1,4 @@
 import { message as msg } from 'antd'
-import { isDev } from '../common/config'
 import { path2url } from '../common/util'
 
 const CONTENT_TYPE = {
@@ -34,11 +33,12 @@ const request = (api, params = {}, headers = {}, method = 'POST') => {
         },
     }
 
-    console.log('url:', url)
-
     const fetchPromise = fetch(url, opts).then(resp => resp.text().then(text => [text, resp.status]))
 
     return fetchPromise.then(([text, status]) => {
+        if (status !== 200) {
+            throw status
+        }
         try {
             return JSON.parse(text.replace(/,[^{,]+:null|[^{,]+:null,/g, ''))
         } catch (e) {
@@ -48,12 +48,16 @@ const request = (api, params = {}, headers = {}, method = 'POST') => {
         if (flag !== 1) {
             throw message
         } else {
-            return data
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(data)
+                }, 3000)
+            })
         }
     }).catch(err => {
         if ((err === 401 || err === 'LOGOVERTIME') && !redirected) {
             redirected = true
-            window.location.href = isDev ? '/dev_login' : `api/cms/tologin?originPage=${window.encodeURI(window.location.href)}`
+            // @TODO 无访问权限操作
         } else {
             msg.error(`${err.message || err}`)
             console.error(`👉${err.message || err}👈`)

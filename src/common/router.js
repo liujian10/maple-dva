@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import { Switch, Route, Redirect } from 'dva/router'
 import { requireAll } from '../common/util'
+import '../styles/global/layout.styl'
 
 const routeConfig = [
     {
@@ -15,52 +16,6 @@ const routeConfig = [
         },
     },
     {
-        path: '/message',
-        label: '消息管理',
-        meta: {
-            access: 'message',
-        },
-        subs: [
-            {
-                path: '/list',
-                label: '消息列表',
-                component: 'Route',
-                meta: {
-                    group: '消息设置',
-                    icon: 'message_list',
-                    access: 'listMessagesForPage',
-                },
-            }, {
-                path: '/detail/:id',
-                label: '消息详情',
-                component: 'Route',
-                meta: {
-                    group: '消息设置',
-                    visible: false,
-                    access: 'getMessageDetails',
-                },
-            }, {
-                path: '/create',
-                label: '新建消息',
-                component: 'Route',
-                meta: {
-                    group: '消息设置',
-                    icon: 'new_message',
-                    access: 'tryNewMessage',
-                },
-            }, {
-                path: '/editor/:id',
-                label: '编辑消息',
-                component: 'Route',
-                meta: {
-                    visible: false,
-                    group: '消息设置',
-                    access: 'tryNewMessage',
-                },
-            },
-        ],
-    },
-    {
         path: '/products',
         label: 'Products',
         component: 'Products',
@@ -72,7 +27,7 @@ const routeConfig = [
     },
 ]
 
-const routes = requireAll(require.context('../routes', false, /\.js$/))
+const routes = requireAll(require.context('../containers', false, /\.js$/))
 
 const getComponent = ({ path, component, subs }) => {
     let comp = null
@@ -110,7 +65,7 @@ const mapViewToRoutesAndLinks = (view, upperBreadcrumb) => {
     }
 
     const Routes = props => (
-        <div {...{ className: 'routes-container', ...props }}>
+        <div className="routes-container" {...props}>
             <Switch>
                 {subs.map(sub => ({ ...sub, path: path + sub.path })).map(sub => {
                     const Comp = getComponent(sub)

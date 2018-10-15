@@ -5,7 +5,7 @@
 }
 
 .title {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: normal;
     letter-spacing: -1px;
 }
@@ -17,11 +17,15 @@
 }
 
 .list {
-    font-size: 12px;
-    margin-top:  12px;
+    font-size: 18px;
+    margin-top: 12px;
     padding: 0;
     list-style: none;
-    line-height:  12px;
+    line-height: 12px;
+}
+
+.list-item {
+    margin: 20px 0;
 }
 
 .list code {

@@ -9,8 +9,9 @@ function IndexPage() {
             <h1 className={styles.title}>Yay! Welcome to dva!</h1>
             <div className={styles.welcome} />
             <ul className={styles.list}>
-                <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-                <li><Link to="products">Products</Link></li>
+                <li className={styles['list-item']}><Link to="products">Products</Link></li>
+                <li className={styles['list-item']}><Link to="no-form">NoForm</Link></li>
+                <li className={styles['list-item']}><Link to="antd-form">Antd Form</Link></li>
             </ul>
         </div>
     )

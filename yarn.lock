@@ -848,6 +848,19 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@sunl-fe/eslint-config-sunlands@^1.6.7":
+  version "1.6.7"
+  resolved "http://172.16.116.19:7001/@sunl-fe/eslint-config-sunlands/download/@sunl-fe/eslint-config-sunlands-1.6.7.tgz#33a859053b540a3d7aa1a31f09fe62d86c75073f"
+  dependencies:
+    babel-eslint "^8.2.1"
+    eslint-config-airbnb "^16.1.0"
+
+"@sunl-fe/login-sso@^1.1.0":
+  version "1.1.0"
+  resolved "http://172.16.116.19:7001/@sunl-fe/login-sso/download/@sunl-fe/login-sso-1.1.0.tgz#c80b5d3ca5e693e258b5fb4e657af83a6895a19d"
+  dependencies:
+    axios "^0.16.2"
+
 "@types/history@*":
   version "4.6.2"
   resolved "http://172.16.116.19:7001/@types/history/download/@types/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
@@ -1412,6 +1425,13 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.7.0"
   resolved "http://172.16.116.19:7001/aws4/download/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
+axios@^0.16.2:
+  version "0.16.2"
+  resolved "http://172.16.116.19:7001/axios/download/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
+
 axobject-query@^0.1.0:
   version "0.1.0"
   resolved "http://172.16.116.19:7001/axobject-query/download/axobject-query-0.1.0.tgz#62f59dbc59c9f9242759ca349960e7a2fe3c36c0"
@@ -1454,7 +1474,7 @@ babel-core@^6.0.0, babel-core@^6.26.0:
     slash "^1.0.0"
     source-map "^0.5.7"
 
-babel-eslint@^8.0.1:
+babel-eslint@^8.0.1, babel-eslint@^8.2.1:
   version "8.2.6"
   resolved "http://172.16.116.19:7001/babel-eslint/download/babel-eslint-8.2.6.tgz#6270d0c73205628067c0f7ae1693a9e797acefd9"
   dependencies:
@@ -2645,6 +2665,10 @@ css-loader@^0.28.7:
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
+css-parse@1.7.x:
+  version "1.7.0"
+  resolved "http://172.16.116.19:7001/css-parse/download/css-parse-1.7.0.tgz#321f6cf73782a6ff751111390fc05e2c657d8c9b"
+
 css-select@^1.1.0, css-select@~1.2.0:
   version "1.2.0"
   resolved "http://172.16.116.19:7001/css-select/download/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -2769,6 +2793,12 @@ date-fns@^1.27.2:
 date-now@^0.1.4:
   version "0.1.4"
   resolved "http://172.16.116.19:7001/date-now/download/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
+
+debug@*:
+  version "4.1.0"
+  resolved "http://172.16.116.19:7001/debug/download/debug-4.1.0.tgz#373687bffa678b38b1cd91f861b63850035ddc87"
+  dependencies:
+    ms "^2.1.1"
 
 debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -3396,6 +3426,18 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-config-airbnb-base@^12.1.0:
+  version "12.1.0"
+  resolved "http://172.16.116.19:7001/eslint-config-airbnb-base/download/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
+  dependencies:
+    eslint-restricted-globals "^0.1.1"
+
+eslint-config-airbnb@^16.1.0:
+  version "16.1.0"
+  resolved "http://172.16.116.19:7001/eslint-config-airbnb/download/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
+  dependencies:
+    eslint-config-airbnb-base "^12.1.0"
+
 eslint-config-react-app@^2.0.0:
   version "2.1.0"
   resolved "http://172.16.116.19:7001/eslint-config-react-app/download/eslint-config-react-app-2.1.0.tgz#23c909f71cbaff76b945b831d2d814b8bde169eb"
@@ -3471,6 +3513,10 @@ eslint-plugin-react@^7.1.0:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
+
+eslint-restricted-globals@^0.1.1:
+  version "0.1.1"
+  resolved "http://172.16.116.19:7001/eslint-restricted-globals/download/eslint-restricted-globals-0.1.1.tgz#35f0d5cbc64c2e3ed62e93b4b1a7af05ba7ed4d7"
 
 eslint-scope@3.7.1, eslint-scope@^3.7.1:
   version "3.7.1"
@@ -3964,6 +4010,12 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.1.0"
 
+follow-redirects@^1.2.3:
+  version "1.5.7"
+  resolved "http://172.16.116.19:7001/follow-redirects/download/follow-redirects-1.5.7.tgz#a39e4804dacb90202bca76a9e2ac10433ca6a69a"
+  dependencies:
+    debug "^3.1.0"
+
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "http://172.16.116.19:7001/for-in/download/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -4180,6 +4232,17 @@ glob@7.0.4:
     inflight "^1.0.4"
     inherits "2"
     minimatch "2 || 3"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@7.0.x:
+  version "7.0.6"
+  resolved "http://172.16.116.19:7001/glob/download/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.2"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
@@ -5892,6 +5955,10 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "http://172.16.116.19:7001/lodash.camelcase/download/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "http://172.16.116.19:7001/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+
 lodash.debounce@^4.0.0, lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "http://172.16.116.19:7001/lodash.debounce/download/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -6308,6 +6375,10 @@ move-concurrently@^1.0.1:
 ms@2.0.0:
   version "2.0.0"
   resolved "http://172.16.116.19:7001/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
+ms@^2.1.1:
+  version "2.1.1"
+  resolved "http://172.16.116.19:7001/ms/download/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
@@ -6943,6 +7014,13 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
+path@^0.12.7:
+  version "0.12.7"
+  resolved "http://172.16.116.19:7001/path/download/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+  dependencies:
+    process "^0.11.1"
+    util "^0.10.3"
+
 pbkdf2@^3.0.3:
   version "3.0.16"
   resolved "http://172.16.116.19:7001/pbkdf2/download/pbkdf2-3.0.16.tgz#7404208ec6b01b62d85bf83853a8064f8d9c2a5c"
@@ -7357,7 +7435,7 @@ process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "http://172.16.116.19:7001/process-nextick-args/download/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
-process@^0.11.10:
+process@^0.11.1, process@^0.11.10:
   version "0.11.10"
   resolved "http://172.16.116.19:7001/process/download/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
@@ -8544,6 +8622,10 @@ sane@^2.0.0:
   optionalDependencies:
     fsevents "^1.2.3"
 
+sax@0.5.x:
+  version "0.5.8"
+  resolved "http://172.16.116.19:7001/sax/download/sax-0.5.8.tgz#d472db228eb331c2506b0e8c15524adb939d12c1"
+
 sax@^1.2.4, sax@~1.2.1:
   version "1.2.4"
   resolved "http://172.16.116.19:7001/sax/download/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -8834,6 +8916,12 @@ source-map-url@^0.4.0:
   version "0.4.0"
   resolved "http://172.16.116.19:7001/source-map-url/download/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
 
+source-map@0.1.x:
+  version "0.1.43"
+  resolved "http://172.16.116.19:7001/source-map/download/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+  dependencies:
+    amdefine ">=0.0.4"
+
 source-map@0.5.6, source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1:
   version "0.5.6"
   resolved "http://172.16.116.19:7001/source-map/download/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
@@ -9113,6 +9201,25 @@ stylint@^1.5.9:
     strip-json-comments "2.0.1"
     user-home "2.0.0"
     yargs "4.7.1"
+
+stylus-loader@^3.0.2:
+  version "3.0.2"
+  resolved "http://172.16.116.19:7001/stylus-loader/download/stylus-loader-3.0.2.tgz#27a706420b05a38e038e7cacb153578d450513c6"
+  dependencies:
+    loader-utils "^1.0.2"
+    lodash.clonedeep "^4.5.0"
+    when "~3.6.x"
+
+stylus@^0.54.5:
+  version "0.54.5"
+  resolved "http://172.16.116.19:7001/stylus/download/stylus-0.54.5.tgz#42b9560931ca7090ce8515a798ba9e6aa3d6dc79"
+  dependencies:
+    css-parse "1.7.x"
+    debug "*"
+    glob "7.0.x"
+    mkdirp "0.5.x"
+    sax "0.5.x"
+    source-map "0.1.x"
 
 subarg@^1.0.0:
   version "1.0.0"
@@ -9950,6 +10057,10 @@ whatwg-url@^6.4.0, whatwg-url@^6.4.1:
     lodash.sortby "^4.7.0"
     tr46 "^1.0.1"
     webidl-conversions "^4.0.2"
+
+when@~3.6.x:
+  version "3.6.4"
+  resolved "http://172.16.116.19:7001/when/download/when-3.6.4.tgz#473b517ec159e2b85005497a13983f095412e34e"
 
 whet.extend@~0.9.9:
   version "0.9.9"

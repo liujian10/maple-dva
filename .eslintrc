@@ -1,3 +1,3 @@
 {
-    "extends": "umi"
+    "extends": "@sunl-fe/eslint-config-sunlands"
 }
