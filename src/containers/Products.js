@@ -10,12 +10,8 @@ import styles from './Products.styl'
     false,
     namespace,
     dispatch => ({
-        listProduct: (...params) => {
-            dispatch(PRODUCT.LIST, ...params)
-        },
-        delteProduct: (...params) => {
-            dispatch(PRODUCT.DELETE, ...params)
-        },
+        listProduct: (...params) => dispatch(PRODUCT.LIST, ...params),
+        delteProduct: (...params) => dispatch(PRODUCT.DELETE, ...params),
     }),
 )
 export default class Products extends React.Component {
@@ -30,21 +26,27 @@ export default class Products extends React.Component {
     }
 
     fetchProducts = () => {
-        this.props.listProduct({}, () => {
-            message.info('列表加载完成！')
+        this.props.listProduct().then(([res, payload, e]) => {
+            console.log('data:', res)
+            console.log('payload:', payload)
+            if (res) {
+                message.info('列表加载完成！')
+            } else {
+                message.info(e.message || e)
+            }
         })
     }
 
     render() {
         const { list, $loading } = this.props
-        const products = list.map((item, index) => ({
-            key: index,
-            ...item,
-        }))
         return (
             <div className={styles.container}>
                 <h2>List of Products</h2>
-                <ProductList onDelete={this.handleDelete} products={products} loading={$loading[`${PRODUCT.LIST}`]} />
+                <ProductList
+                    products={list}
+                    loading={$loading[`${PRODUCT.LIST}`]}
+                    onDelete={this.handleDelete}
+                />
             </div>
         )
     }

@@ -1,14 +1,14 @@
 import { post } from './request'
 
-function* base(action, { payload, callback = () => {} }, { put, call }) {
+function* base(action, { payload }, { put, call }) {
     try {
         // 调用 saveTodoToServer，成功后触发 `add` action 保存到 state
         const data = yield call(post, action.VAL, payload)
         yield put({ type: action.OK, payload: data })
-        callback(null, data, payload)
+        return [data, payload, null]
     } catch (e) {
-        callback(e, null, payload)
         yield put({ type: action.NOK, message: e })
+        return [null, payload, e]
     }
 }
 
@@ -18,7 +18,7 @@ export const effectify = (v, handler = base, type = 'takeLatest') => {
     } else {
         v.effect = [
             function* (action, saga) {
-                yield handler(v, action, saga)
+                return yield handler(v, action, saga)
             }, { type },
         ]
     }

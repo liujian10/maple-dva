@@ -9,7 +9,8 @@ const ProductList = ({ onDelete, products, loading }) => {
             dataIndex: 'name',
         }, {
             title: 'Actions',
-            render: (text, { id, name }) => (
+            dataIndex: 'id',
+            render: (id, { name }) => (
                 <Popconfirm title={`Delete ${name}?`} onConfirm={() => onDelete(id)}>
                     <Button>Delete</Button>
                 </Popconfirm>
@@ -18,6 +19,7 @@ const ProductList = ({ onDelete, products, loading }) => {
     ]
     return (
         <Table
+            rowKey="id"
             loading={loading}
             dataSource={products}
             columns={columns}

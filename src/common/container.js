@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import { Form } from 'antd'
 import { connect } from 'dva'
 import { withRouter } from 'dva/router'
@@ -25,14 +24,14 @@ export default (formOpt, ...connectOpts) => {
         })
     }
 
-    const mapDispatch = dispatch => mapDispatchToProps((type, payload, callback = _.noop) => {
+    const mapDispatch = dispatch => mapDispatchToProps((type, payload) => new Promise(resolve => {
         if (typeof type === 'object') {
-            const { type: t, callback: cb = _.noop, ...pd } = type
-            dispatch({ type: `${t}`, payload: pd, callback: cb })
+            const { type: t, ...pd } = type
+            resolve(dispatch({ type: `${t}`, payload: pd }))
         } else {
-            dispatch({ type: `${type}`, payload, callback })
+            resolve(dispatch({ type: `${type}`, payload }))
         }
-    })
+    }))
 
     chain.push(connect(mapState, mapDispatch))
 
