@@ -10,31 +10,27 @@ import styles from './Products.styl'
     false,
     namespace,
     dispatch => ({
-        listProduct: (...params) => dispatch(PRODUCT.LIST, ...params),
-        delteProduct: (...params) => dispatch(PRODUCT.DELETE, ...params),
+        listProduct: payload => dispatch(PRODUCT.LIST, payload),
+        delteProduct: payload => dispatch(PRODUCT.DELETE, payload),
     }),
 )
 export default class Products extends React.Component {
     state = {}
 
     componentDidMount() {
-        this.fetchProducts()
+        this.props.listProduct().then(([res, e]) => {
+            if (res) {
+                console.log('data:', res)
+                message.success('列表加载完成！')
+            } else {
+                console.log('err:', e)
+                message.error(e.message || e)
+            }
+        })
     }
 
     handleDelete = id => {
         this.props.delteProduct({ id })
-    }
-
-    fetchProducts = () => {
-        this.props.listProduct().then(([res, payload, e]) => {
-            console.log('data:', res)
-            console.log('payload:', payload)
-            if (res) {
-                message.info('列表加载完成！')
-            } else {
-                message.info(e.message || e)
-            }
-        })
     }
 
     render() {

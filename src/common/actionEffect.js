@@ -5,10 +5,10 @@ function* base(action, { payload }, { put, call }) {
         // 调用 saveTodoToServer，成功后触发 `add` action 保存到 state
         const data = yield call(post, action.VAL, payload)
         yield put({ type: action.OK, payload: data })
-        return [data, payload, null]
+        return [data, null]
     } catch (e) {
         yield put({ type: action.NOK, message: e })
-        return [null, payload, e]
+        return [null, e]
     }
 }
 
