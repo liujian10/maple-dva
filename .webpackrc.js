@@ -9,6 +9,9 @@ export default {
     extraBabelPlugins: [
         ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': 'css' }],
     ],
+    extraBabelPlugins: [
+        ['wrapper', {}],
+    ],
     hash: true,
     html: {
         'template': './public/index.ejs',

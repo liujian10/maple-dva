@@ -11,7 +11,7 @@ class Route extends React.Component {
         const { location: { pathname, hash } } = this.props
         return (
             <div>
-                <h2>{`Path: ${pathname} ${hash}`}</h2>
+                <h2>{`Path: ${pathname} ${hash} No Found`}</h2>
             </div>
         )
     }

@@ -1,0 +1,19 @@
+{
+    "message": "",
+    "flag": 1,
+    "data": [
+      {
+        "id": 1,
+        "name": "framework"
+      },
+      {
+        "id": 2,
+        "name": "library"
+      },
+      {
+        "id": 3,
+        "name": "component"
+      }
+    ]
+  }
+  

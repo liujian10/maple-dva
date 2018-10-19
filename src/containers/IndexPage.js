@@ -10,8 +10,7 @@ function IndexPage() {
             <div className={styles.welcome} />
             <ul className={styles.list}>
                 <li className={styles['list-item']}><Link to="products">Products</Link></li>
-                <li className={styles['list-item']}><Link to="no-form">NoForm</Link></li>
-                <li className={styles['list-item']}><Link to="antd-form">Antd Form</Link></li>
+                <li className={styles['list-item']}><Link to="route">Route</Link></li>
             </ul>
         </div>
     )

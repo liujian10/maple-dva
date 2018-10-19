@@ -3,12 +3,18 @@
   "flag": 1,
   "data": [
     {
+      "id": 1,
       "name": "dva",
-      "id": 1
+      "type": 1,
+      "enable": 1,
+      "desc": "dva 首先是一个基于 redux 和 redux-saga 的数据流方案，然后为了简化开发体验，dva 还额外内置了 react-router 和 fetch，所以也可以理解为一个轻量级的应用框架。"
     },
     {
+      "id": 2,
       "name": "antd",
-      "id": 2
+      "type": 2,
+      "enable": 0,
+      "desc": "An enterprise-class UI design language and React-based implementation with a set of high-quality React components, one of best React UI library for ..."
     }
   ]
 }

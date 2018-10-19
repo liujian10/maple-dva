@@ -55,3 +55,15 @@ export const mapAction = (actionSet, prefix = []) => {
         }
     })
 }
+
+/**
+ * 判断值是否为空[undefined|null|'']
+ * @param {} value
+ */
+export const isEmpty = value => value === undefined || value === null || value === ''
+
+/**
+ * 判断是否为非空数组
+ * @param {*} arr
+ */
+export const hasChildInArr = arr => Array.isArray(arr) && arr.length > 0

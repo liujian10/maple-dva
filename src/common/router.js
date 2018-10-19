@@ -25,6 +25,10 @@ const routeConfig = [
             access: 'listMessagesForPage',
         },
     },
+    {
+        path: '/route',
+        label: 'NotFound',
+    },
 ]
 
 const routes = requireAll(require.context('../containers', false, /\.js$/))
