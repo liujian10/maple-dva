@@ -15,17 +15,14 @@ const FORM_ITEM_DESC = 'desc'
 
 // 表单项布局
 const formItemLayout = {
-    labelCol: {
-        span: 6,
-    },
-    wrapperCol: {
-        span: 15,
-    },
+    labelCol: { span: 6 },
+    wrapperCol: { span: 16 },
 }
 
 const AntdFormModal = ({
     form: { validateFields, getFieldDecorator, resetFields },
     visible, types, fields: { id },
+    loading,
     hideModal,
     handleSubmit,
 }) => {
@@ -34,6 +31,7 @@ const AntdFormModal = ({
     const modalProps = {
         title: `${isEditing ? 'Edit' : 'Add'} Product`,
         visible,
+        confirmLoading: loading,
         onOk: () => {
             validateFields({ force: true }, (err, values) => {
                 if (!err) {
@@ -68,6 +66,7 @@ const AntdFormModal = ({
                 </FormItem>
                 <FormItem {...formItemLayout} label="Enable" >
                     {getFieldDecorator(FORM_ITEM_ENABLE, {
+                        valuePropName: 'checked',
                         rules: [{ required: true }],
                     })(<Switch checkedChildren="Yes" unCheckedChildren="No" />)}
                 </FormItem>
@@ -89,6 +88,7 @@ const AntdFormModal = ({
 
 AntdFormModal.propTypes = {
     visible: propTypes.bool,
+    loading: propTypes.bool,
     fields: propTypes.object,
     types: propTypes.array,
     hideModal: propTypes.func,
@@ -97,6 +97,7 @@ AntdFormModal.propTypes = {
 }
 AntdFormModal.defaultProps = {
     visible: false,
+    loading: false,
     fields: {},
     types: [],
     hideModal: () => {},

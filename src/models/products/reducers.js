@@ -3,6 +3,7 @@ import action from './actions'
 export const initState = {
     list: [],
     types: [],
+    submitLoading: false,
 }
 export default {
     [action.LIST.OK](state, { payload: list }) {
@@ -40,6 +41,13 @@ export default {
         return {
             ...state,
             list: newList,
+            submitLoading: false,
+        }
+    },
+    [action.SET_STATE.KEY](state, { payload }) {
+        return {
+            ...state,
+            ...payload,
         }
     },
 }

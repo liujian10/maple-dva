@@ -26,6 +26,11 @@ const routeConfig = [
         },
     },
     {
+        path: '/demo',
+        label: 'demo',
+        component: 'Demo',
+    },
+    {
         path: '/route',
         label: 'NotFound',
     },

@@ -7,6 +7,7 @@ const actions = {
     TYPES: 'product/types',
     UPDATE: false,
     DELETE: false,
+    SET_STATE: false,
 }
 
 mapAction(actions, [namespace])

@@ -16,12 +16,14 @@ import styles from './Products.styl'
         getTypes: payload => dispatch(PRODUCT.TYPES, payload),
         updateProduct: payload => dispatch(PRODUCT.UPDATE, payload),
         delteProduct: payload => dispatch(PRODUCT.DELETE, payload),
+        setState: payload => dispatch(PRODUCT.SET_STATE, payload),
     }),
 )
 export default class Products extends React.Component {
     static propTypes = {
         list: propTypes.array,
         types: propTypes.array,
+        submitLoading: propTypes.bool,
         $loading: propTypes.object,
         listProduct: propTypes.func,
         delteProduct: propTypes.func,
@@ -33,6 +35,7 @@ export default class Products extends React.Component {
         list: [],
         types: [],
         $loading: {},
+        submitLoading: false,
         listProduct: () => {},
         delteProduct: () => {},
         updateProduct: () => {},
@@ -62,11 +65,16 @@ export default class Products extends React.Component {
     }
 
     handleSubmit = (values, callback) => {
-        this.props.updateProduct(values).then(() => {
-            this.hideEditModal()
-            message.success('保存成功！')
-            callback()
+        this.props.setState({
+            submitLoading: true,
         })
+        setTimeout(() => {
+            this.props.updateProduct(values).then(() => {
+                this.hideEditModal()
+                message.success('保存成功！')
+                callback()
+            })
+        }, 1000)
     }
 
     showEditModal = (type, item = {}) => {
@@ -74,7 +82,7 @@ export default class Products extends React.Component {
         if (type === 'antd') {
             const antdFormItem = { }
             Object.entries(item).forEach(([key, value]) => {
-                antdFormItem[key] = { value }
+                antdFormItem[key] = { value: key === 'enable' ? !!value : value }
             })
             newState.antdFormItem = antdFormItem
             newState.antdFormVisible = true
@@ -98,7 +106,9 @@ export default class Products extends React.Component {
     }
 
     render() {
-        const { list, types, $loading } = this.props
+        const {
+            list, types, $loading, submitLoading,
+        } = this.props
         const {
             antdFormVisible, noformVisible, antdFormItem, noformItem,
         } = this.state
@@ -106,6 +116,7 @@ export default class Products extends React.Component {
             fields: antdFormItem,
             types,
             visible: antdFormVisible,
+            loading: submitLoading,
             onChange: this.changedFields,
             hideModal: this.hideEditModal,
             handleSubmit: this.handleSubmit,

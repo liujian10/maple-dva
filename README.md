@@ -2,9 +2,6 @@
 
 ## dva简介
 
-> [【第三十四期】 dva](http://192.168.0.224/fe/blog/issues/60)
-
-
 * 数据流向
 
 ![dva](https://camo.githubusercontent.com/c826ff066ed438e2689154e81ff5961ab0b9befe/68747470733a2f2f7a6f732e616c697061796f626a656374732e636f6d2f726d73706f7274616c2f505072657245414b62496f445a59722e706e67)
@@ -17,7 +14,9 @@
 4. 插件机制，比如：[dva-loading](https://github.com/dvajs/dva/tree/master/packages/dva-loading) 可以自动处理 loading 状态【官方的好像就两】
 5. roadhog，配套的开发工具，简单的配置就可以实现项目的初始化【其实不好用>.<】
 
-## Installation
+## 项目实践
+
+### Installation
 
 ```bash
 $ git clone http://172.16.117.224/liujian02/maple-dva.git
@@ -35,7 +34,7 @@ $ yarn start
 |`fixeslint`        |eslint + 自动 fixes|
 |...|
 
-## 目录结构
+### 目录结构
 
 ```
 .
@@ -68,7 +67,7 @@ $ yarn start
 └── ...
 ```
 
-## index.js
+### index.js
 ```javascript
 import dva from 'dva'
 import createLoading from 'dva-loading'
@@ -106,11 +105,11 @@ app.start('#root')
 4. [dva.router](https://dvajs.com/api/#app-router-history-app-routerconfig) 注册路由表
 5. [dva.start](https://dvajs.com/api/#app-start-selector) 启动应用
 
-## model
+### model
 
 将model拆分到同一文件夹的不同文件中，既方便查找，又避免内容过多时单个model文件体量过大
 
-### `model.js`
+#### `model.js`
 
 ```javascript
 import { namespace } from './actions'
@@ -136,7 +135,7 @@ export default {
 * 分别从 `actions.js`, `reduces.js`, `effects.js` 中获取`namespace`, `reduces/initstate`, `reduces`, `effects`
 * 有需要的话 `subscriptions` 也可以独立出来。
 
-### `actions.js`
+#### `actions.js`
 
 ```javascript
 import { mapAction } from '../../common/util'
@@ -158,7 +157,7 @@ export default actions
 *  actions 如果是`同步`的，设置为 `false`, 如果是`异步`的，可以为请求地址【前缀为请求格式】
 *  改造后 action 包含 `KEY`[命名], `VAL`[值], `URL`[请求的最终url], `OK`[异步操作成功action], `NOK`[异步操作失败action], `toString()`[拼接namespace及路径的action, dispatch用]
 
-### `effects`
+#### `effects`
 
 通过 `mapActionToEffect` 方法生成 `异步action` 对应的 `effect`
 
@@ -188,7 +187,7 @@ export default mapActionToEffect(actions)
 * 默认会处理 `异步 action` 并触发新的 `OK/NOK` action
 * 如果默认的处理方式不满足需求，可以通过 `effectify` 方法重写 `effect`
 
-### `reduces.js`
+#### `reduces.js`
 
 定义初始 `state` 值与 `reduce`
 
@@ -218,7 +217,7 @@ export default {
 * `.OK/NOK` reducer 处理异步 action
 * `.KEY` reducer 处理同步 action
 
-### `container.js`
+#### `container.js`
 
 容器修饰器，应用 `withRouter`, `Form`, `connect`, 封装 `state`, `dispatch`
 
@@ -261,7 +260,7 @@ export default (formOpt, ...connectOpts) => {
 * 可在 `state` 中封装额外的信息，如全局应用信息 `$app`, 加载状态 `$loading`
 * 入参简化处理，只传入2各参数默认应用 `Form.create`
 
-### `container`
+#### `container`
 
 页面容器，容器修饰器可以帮助我们快速生成页面容器
 
@@ -301,7 +300,7 @@ export default class Products extends React.Component {
 
 > Roadhog 是一个包含 `dev`、`build` 和 `test` 的命令行工具，他基于 [react-dev-utils](https://github.com/facebookincubator/create-react-app/tree/master/packages/react-dev-utils)，和 [create-react-app](https://github.com/facebookincubator/create-react-app) 的体验保持一致。你可以想象他为可配置版的 create-react-app。 ——官方介绍
 
-### `.webpackrc.js`
+#### `.webpackrc.js`
 ```javascript
 export default {
     hash: true, //配置让构建产物文件名带 hash
@@ -335,7 +334,7 @@ export default {
 ```
 * 这是roadhog开放出来的配置项，具体可见官网介绍
 
-### `webpack.config.js`
+#### `webpack.config.js`
 
 除了官方配置，我们也可以修改 webpack.config.js
 
