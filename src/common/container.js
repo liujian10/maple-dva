@@ -3,35 +3,42 @@ import { connect } from 'dva'
 import { withRouter } from 'dva/router'
 import { compose } from '../common/util'
 
-export default (formOpt, ...connectOpts) => {
+export default (formOpt, namespace, ...connectOpts) => {
     const chain = [withRouter]
 
-    if (connectOpts.length === 2 || formOpt === true) {
+    if (formOpt) {
         chain.push(Form.create(typeof formOpt === 'object' ? formOpt : {}))
-    } else {
-        connectOpts = [formOpt, ...connectOpts]
     }
 
-    const [namespace, mapDispatchToProps] = connectOpts
+    const [
+        mapStateToProps = () => {},
+        mapDispatchToProps = () => {},
+    ] = connectOpts || []
 
-    let mapState = state => ({ $app: state.app, $loading: state.loading })
+    const mapState = state => ({
+        $app: state.app,
+        $loading: {
+            ...state.loading,
+            ...state.loading.models,
+            ...state.loading.effects,
+        },
+        ...(typeof namespace === 'string' ? state[namespace] : {}),
+        ...mapStateToProps(state),
+    })
 
-    if (typeof namespace === 'string') {
-        mapState = state => ({
-            $app: state.app,
-            $loading: state.loading.effects,
-            ...state[namespace],
-        })
-    }
-
-    const mapDispatch = dispatch => mapDispatchToProps((type, payload) => new Promise(resolve => {
+    const dispatchHadnler = dispatch => (type, payload) => new Promise(resolve => {
         if (typeof type === 'object') {
             const { type: t, ...pd } = type
             resolve(dispatch({ type: `${t}`, payload: pd }))
         } else {
             resolve(dispatch({ type: `${type}`, payload }))
         }
-    }))
+    })
+
+    const mapDispatch = dispatch => ({
+        ...mapDispatchToProps(dispatchHadnler(dispatch)),
+        dispatch: dispatchHadnler(dispatch),
+    })
 
     chain.push(connect(mapState, mapDispatch))
 

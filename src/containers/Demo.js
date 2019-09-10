@@ -92,7 +92,6 @@ export default class Demo extends React.Component {
                         </div>,
                     ]}
                 </QueueAnim>
-
             </div>
         )
     }

@@ -11,13 +11,6 @@ import styles from './Products.styl'
 @container(
     false,
     namespace,
-    dispatch => ({
-        listProduct: payload => dispatch(PRODUCT.LIST, payload),
-        getTypes: payload => dispatch(PRODUCT.TYPES, payload),
-        updateProduct: payload => dispatch(PRODUCT.UPDATE, payload),
-        delteProduct: payload => dispatch(PRODUCT.DELETE, payload),
-        setState: payload => dispatch(PRODUCT.SET_STATE, payload),
-    }),
 )
 export default class Products extends React.Component {
     static propTypes = {
@@ -25,10 +18,6 @@ export default class Products extends React.Component {
         types: propTypes.array,
         submitLoading: propTypes.bool,
         $loading: propTypes.object,
-        listProduct: propTypes.func,
-        delteProduct: propTypes.func,
-        updateProduct: propTypes.func,
-        getTypes: propTypes.func,
     }
 
     static defaultProps = {
@@ -36,10 +25,6 @@ export default class Products extends React.Component {
         types: [],
         $loading: {},
         submitLoading: false,
-        listProduct: () => {},
-        delteProduct: () => {},
-        updateProduct: () => {},
-        getTypes: () => {},
     }
 
     state = {
@@ -50,8 +35,8 @@ export default class Products extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getTypes()
-        this.props.listProduct().then(([res, e]) => {
+        this.props.dispatch(PRODUCT.TYPES)
+        this.props.dispatch(PRODUCT.LIST).then(([res, e]) => {
             if (res) {
                 message.success('列表加载完成！')
             } else {
@@ -61,15 +46,15 @@ export default class Products extends React.Component {
     }
 
     handleDelete = id => {
-        this.props.delteProduct({ id })
+        this.props.dispatch(PRODUCT.DELETE, { id })
     }
 
     handleSubmit = (values, callback) => {
-        this.props.setState({
+        this.props.dispatch(PRODUCT.SET_STATE, {
             submitLoading: true,
         })
         setTimeout(() => {
-            this.props.updateProduct(values).then(() => {
+            this.props.dispatch(PRODUCT.UPDATE, values).then(() => {
                 this.hideEditModal()
                 message.success('保存成功！')
                 callback()
