@@ -34,10 +34,10 @@
     },
     "devDependencies": {
         "antd": "^3.23.2",
-        "babel-plugin-dva-hmr": "^0.3.2",
-        "babel-plugin-import": "^1.8.0",
+        "babel-plugin-dva-hmr": "^0.4.2",
+        "babel-plugin-import": "^1.12.1",
         "babel-plugin-wrapper": "^1.0.17",
-        "copy-webpack-plugin": "^4.5.2",
+        "copy-webpack-plugin": "^5.0.4",
         "cross-env": "^5.2.0",
         "eslint": "^4.14.0",
         "eslint-config-umi": "^1.5.0",

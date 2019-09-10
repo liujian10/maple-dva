@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = (webpackConfig, env) => {
-    console.log(JSON.stringify(webpackConfig))
     webpackConfig.module.rules.forEach(rule => {
         const { loader = '', test } = rule
         if (loader.indexOf('url-loader') !== -1) {
