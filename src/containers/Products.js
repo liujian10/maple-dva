@@ -80,7 +80,10 @@ export default class Products extends React.Component {
 
     hideEditModal = () => {
         this.setState({
-            antdFormVisible: false, noformVisible: false, antdFormItem: {}, noformItem: {},
+            antdFormVisible: false,
+            noformVisible: false,
+            antdFormItem: {},
+            noformItem: {},
         })
     }
 
@@ -94,9 +97,11 @@ export default class Products extends React.Component {
         const {
             list, types, $loading, submitLoading,
         } = this.props
+
         const {
             antdFormVisible, noformVisible, antdFormItem, noformItem,
         } = this.state
+
         const antdModalProps = {
             fields: antdFormItem,
             types,
