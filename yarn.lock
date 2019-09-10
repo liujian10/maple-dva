@@ -2,18 +2,33 @@
 # yarn lockfile v1
 
 
-"@ant-design/icons-react@~1.1.2":
-  version "1.1.2"
-  resolved "http://172.16.116.19:7001/@ant-design/icons-react/download/@ant-design/icons-react-1.1.2.tgz#df25c4560864f8a3b687b305c3238daff048ed72"
-  integrity sha1-3yXEVghk+KO2h7MFwyONr/BI7XI=
+"@ant-design/colors@^3.1.0":
+  version "3.2.1"
+  resolved "http://172.16.116.19:7001/@ant-design/colors/download/@ant-design/colors-3.2.1.tgz#ad86cbf2d1a0039d01586aa73a7ea8a7ce0455a2"
+  integrity sha1-rYbL8tGgA50BWGqnOn6op84EVaI=
   dependencies:
-    ant-design-palettes "^1.1.3"
+    tinycolor2 "^1.4.1"
+
+"@ant-design/create-react-context@^0.2.4":
+  version "0.2.4"
+  resolved "http://172.16.116.19:7001/@ant-design/create-react-context/download/@ant-design/create-react-context-0.2.4.tgz#0fe9adad030350c0c9bb296dd6dcf5a8a36bd425"
+  integrity sha1-D+mtrQMDUMDJuylt1tz1qKNr1CU=
+  dependencies:
+    gud "^1.0.0"
+    warning "^4.0.3"
+
+"@ant-design/icons-react@~2.0.1":
+  version "2.0.1"
+  resolved "http://172.16.116.19:7001/@ant-design/icons-react/download/@ant-design/icons-react-2.0.1.tgz#17a2513571ab317aca2927e58cea25dd31e536fb"
+  integrity sha1-F6JRNXGrMXrKKSfljOol3THlNvs=
+  dependencies:
+    "@ant-design/colors" "^3.1.0"
     babel-runtime "^6.26.0"
 
-"@ant-design/icons@~1.1.15":
-  version "1.1.16"
-  resolved "http://172.16.116.19:7001/@ant-design/icons/download/@ant-design/icons-1.1.16.tgz#ac6426216934e3f4bc108f2f48f92ed66789235e"
-  integrity sha1-rGQmIWk04/S8EI8vSPku1meJI14=
+"@ant-design/icons@~2.1.1":
+  version "2.1.1"
+  resolved "http://172.16.116.19:7001/@ant-design/icons/download/@ant-design/icons-2.1.1.tgz#7b9c08dffd4f5d41db667d9dbe5e0107d0bd9a4a"
+  integrity sha1-e5wI3/1PXUHbZn2dvl4BB9C9mko=
 
 "@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -1044,6 +1059,13 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-slick@^0.23.4":
+  version "0.23.4"
+  resolved "http://172.16.116.19:7001/@types/react-slick/download/@types/react-slick-0.23.4.tgz#c97e2a9e7e3d1933c68593b8e82752fab1e8ce53"
+  integrity sha1-yX4qnn49GTPGhZO46CdS+rHozlM=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*":
   version "16.9.2"
   resolved "http://172.16.116.19:7001/@types/react/download/@types/react-16.9.2.tgz#6d1765431a1ad1877979013906731aae373de268"
@@ -1300,69 +1322,63 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ant-design-palettes@^1.1.3:
-  version "1.1.3"
-  resolved "http://172.16.116.19:7001/ant-design-palettes/download/ant-design-palettes-1.1.3.tgz#84119b1a4d86363adc52a38d587e65336a0a27dd"
-  integrity sha1-hBGbGk2GNjrcUqONWH5lM2oKJ90=
+antd@^3.23.2:
+  version "3.23.2"
+  resolved "http://172.16.116.19:7001/antd/download/antd-3.23.2.tgz#6fcbe5b22a932913a33dce0b6b76b4a60c30a403"
+  integrity sha1-b8vlsiqTKROjPc4La3a0pgwwpAM=
   dependencies:
-    tinycolor2 "^1.4.1"
-
-antd@^3.6.6:
-  version "3.11.0"
-  resolved "http://172.16.116.19:7001/antd/download/antd-3.11.0.tgz#e9ff4e37bd1301bb085730e26a38e633270a38f1"
-  integrity sha1-6f9ON70TAbsIVzDiajjmMycKOPE=
-  dependencies:
-    "@ant-design/icons" "~1.1.15"
-    "@ant-design/icons-react" "~1.1.2"
+    "@ant-design/create-react-context" "^0.2.4"
+    "@ant-design/icons" "~2.1.1"
+    "@ant-design/icons-react" "~2.0.1"
+    "@types/react-slick" "^0.23.4"
     array-tree-filter "^2.1.0"
     babel-runtime "6.x"
     classnames "~2.2.6"
-    create-react-class "^15.6.3"
-    create-react-context "0.2.2"
+    copy-to-clipboard "^3.2.0"
     css-animation "^1.5.0"
     dom-closest "^0.2.0"
     enquire.js "^2.1.6"
-    intersperse "^1.0.0"
-    lodash "^4.17.11"
-    moment "^2.22.2"
-    omit.js "^1.0.0"
-    prop-types "^15.6.2"
-    raf "^3.4.0"
-    rc-animate "^2.5.4"
-    rc-calendar "~9.8.0"
-    rc-cascader "~0.16.0"
-    rc-checkbox "~2.1.5"
-    rc-collapse "~1.10.0"
-    rc-dialog "~7.2.1"
-    rc-drawer "~1.7.6"
-    rc-dropdown "~2.2.1"
-    rc-editor-mention "^1.1.7"
-    rc-form "^2.2.3"
-    rc-input-number "~4.3.0"
-    rc-menu "~7.4.12"
-    rc-notification "~3.3.0"
-    rc-pagination "~1.17.3"
-    rc-progress "~2.2.6"
-    rc-rate "~2.4.2"
-    rc-select "~8.6.0"
-    rc-slider "~8.6.3"
-    rc-steps "~3.3.0"
-    rc-switch "~1.8.0"
-    rc-table "~6.4.0"
-    rc-tabs "~9.5.2"
-    rc-time-picker "~3.4.0"
+    lodash "^4.17.13"
+    moment "^2.24.0"
+    omit.js "^1.0.2"
+    prop-types "^15.7.2"
+    raf "^3.4.1"
+    rc-animate "^2.8.3"
+    rc-calendar "~9.15.5"
+    rc-cascader "~0.17.4"
+    rc-checkbox "~2.1.6"
+    rc-collapse "~1.11.3"
+    rc-dialog "~7.5.2"
+    rc-drawer "~2.0.1"
+    rc-dropdown "~2.4.1"
+    rc-editor-mention "^1.1.13"
+    rc-form "^2.4.5"
+    rc-input-number "~4.5.0"
+    rc-mentions "~0.4.0"
+    rc-menu "~7.4.23"
+    rc-notification "~3.3.1"
+    rc-pagination "~1.20.5"
+    rc-progress "~2.5.0"
+    rc-rate "~2.5.0"
+    rc-select "~9.2.0"
+    rc-slider "~8.6.11"
+    rc-steps "~3.5.0"
+    rc-switch "~1.9.0"
+    rc-table "~6.7.0"
+    rc-tabs "~9.6.4"
+    rc-time-picker "~3.7.1"
     rc-tooltip "~3.7.3"
-    rc-tree "~1.14.6"
-    rc-tree-select "~2.4.0"
+    rc-tree "~2.1.0"
+    rc-tree-select "~2.9.1"
     rc-trigger "^2.6.2"
-    rc-upload "~2.6.0"
-    rc-util "^4.5.1"
+    rc-upload "~2.7.0"
+    rc-util "^4.10.0"
     react-lazy-load "^3.0.13"
     react-lifecycles-compat "^3.0.4"
-    react-slick "~0.23.2"
-    resize-observer-polyfill "^1.5.0"
+    react-slick "~0.25.2"
+    resize-observer-polyfill "^1.5.1"
     shallowequal "^1.1.0"
-    warning "~4.0.2"
+    warning "~4.0.3"
 
 any-observable@^0.3.0:
   version "0.3.0"
@@ -1490,11 +1506,6 @@ array-reduce@~0.0.0:
   resolved "http://172.16.116.19:7001/array-reduce/download/array-reduce-0.0.0.tgz#173899d3ffd1c7d9383e4479525dbe278cab5f2b"
   integrity sha1-FziZ0//Rx9k4PkR5Ul2+J4yrXys=
 
-array-tree-filter@^1.0.0:
-  version "1.0.1"
-  resolved "http://172.16.116.19:7001/array-tree-filter/download/array-tree-filter-1.0.1.tgz#0a8ad1eefd38ce88858632f9cc0423d7634e4d5d"
-  integrity sha1-CorR7v04zoiFhjL5zAQj12NOTV0=
-
 array-tree-filter@^2.1.0:
   version "2.1.0"
   resolved "http://172.16.116.19:7001/array-tree-filter/download/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
@@ -1606,12 +1617,10 @@ async-validator@^1.8.2:
   dependencies:
     babel-runtime "6.x"
 
-async-validator@~1.8.5:
-  version "1.8.5"
-  resolved "http://172.16.116.19:7001/async-validator/download/async-validator-1.8.5.tgz#dc3e08ec1fd0dddb67e60842f02c0cd1cec6d7f0"
-  integrity sha1-3D4I7B/Q3dtn5ghC8CwM0c7G1/A=
-  dependencies:
-    babel-runtime "6.x"
+async-validator@~1.11.3:
+  version "1.11.5"
+  resolved "http://172.16.116.19:7001/async-validator/download/async-validator-1.11.5.tgz#9d43cf49ef6bb76be5442388d19fb9a6e47597ea"
+  integrity sha1-nUPPSe9rt2vlRCOI0Z+5puR1l+o=
 
 async@1.5.2, async@^1.5.2:
   version "1.5.2"
@@ -2930,6 +2939,13 @@ copy-descriptor@^0.1.0:
   resolved "http://172.16.116.19:7001/copy-descriptor/download/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+copy-to-clipboard@^3.2.0:
+  version "3.2.0"
+  resolved "http://172.16.116.19:7001/copy-to-clipboard/download/copy-to-clipboard-3.2.0.tgz#d2724a3ccbfed89706fac8a894872c979ac74467"
+  integrity sha1-0nJKPMv+2JcG+siolIcsl5rHRGc=
+  dependencies:
+    toggle-selection "^1.0.6"
+
 copy-webpack-plugin@^4.2.0, copy-webpack-plugin@^4.5.2:
   version "4.6.0"
   resolved "http://172.16.116.19:7001/copy-webpack-plugin/download/copy-webpack-plugin-4.6.0.tgz#e7f40dd8a68477d405dd1b7a854aae324b158bae"
@@ -3039,7 +3055,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.2, create-react-class@^15.5.3, create-react-class@^15.6.3:
+create-react-class@^15.5.3:
   version "15.6.3"
   resolved "http://172.16.116.19:7001/create-react-class/download/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha1-LXMjf7P5cK5uvgEanmb0bbyoADY=
@@ -3047,14 +3063,6 @@ create-react-class@^15.5.2, create-react-class@^15.5.3, create-react-class@^15.6
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
-
-create-react-context@0.2.2:
-  version "0.2.2"
-  resolved "http://172.16.116.19:7001/create-react-context/download/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
-  integrity sha1-mDZUL5qqIoaM19Sm+CZn3zgBnco=
-  dependencies:
-    fbjs "^0.8.0"
-    gud "^1.0.0"
 
 cross-env@^5.2.0:
   version "5.2.0"
@@ -3578,7 +3586,7 @@ dom-matches@>=1.0.1:
   resolved "http://172.16.116.19:7001/dom-matches/download/dom-matches-2.0.0.tgz#d2728b416a87533980eb089b848d253cf23a758c"
   integrity sha1-0nKLQWqHUzmA6wibhI0lPPI6dYw=
 
-dom-scroll-into-view@1.x, dom-scroll-into-view@^1.2.0:
+dom-scroll-into-view@1.x, dom-scroll-into-view@^1.2.0, dom-scroll-into-view@^1.2.1:
   version "1.2.1"
   resolved "http://172.16.116.19:7001/dom-scroll-into-view/download/dom-scroll-into-view-1.2.1.tgz#e8f36732dd089b0201a88d7815dc3f88e6d66c7e"
   integrity sha1-6PNnMt0ImwIBqI14Fdw/iObWbH4=
@@ -4515,7 +4523,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.0, fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.9:
+fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.9:
   version "0.8.17"
   resolved "http://172.16.116.19:7001/fbjs/download/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -5255,7 +5263,7 @@ he@1.2.x:
   resolved "http://172.16.116.19:7001/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-history@^4.6.3:
+history@^4.6.3, history@^4.9.0:
   version "4.9.0"
   resolved "http://172.16.116.19:7001/history/download/history-4.9.0.tgz#84587c2068039ead8af769e9d6a6860a14fa1bca"
   integrity sha1-hFh8IGgDnq2K92np1qaGChT6G8o=
@@ -5296,6 +5304,13 @@ hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "http://172.16.116.19:7001/hoist-non-react-statics/download/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
+
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "http://172.16.116.19:7001/hoist-non-react-statics/download/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha1-sJF48BIhhPuVrPUl2q7LTY9FlYs=
+  dependencies:
+    react-is "^16.7.0"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -5652,10 +5667,10 @@ inquirer@3.3.0, inquirer@^3.0.6, inquirer@^3.3.0:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-install@^0.12.1:
-  version "0.12.2"
-  resolved "http://172.16.116.19:7001/install/download/install-0.12.2.tgz#ea10e9b2cbb5b0484f25080b24b5b34429d9f564"
-  integrity sha1-6hDpssu1sEhPJQgLJLWzRCnZ9WQ=
+install@^0.13.0:
+  version "0.13.0"
+  resolved "http://172.16.116.19:7001/install/download/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+  integrity sha1-avbp2p3QmH3iq0IPeOYNnBcmB3Y=
 
 internal-ip@1.2.0:
   version "1.2.0"
@@ -5668,11 +5683,6 @@ interpret@^1.0.0:
   version "1.1.0"
   resolved "http://172.16.116.19:7001/interpret/download/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
   integrity sha1-ftGxQQxqDg94z5XTuEQMY/eLhhQ=
-
-intersperse@^1.0.0:
-  version "1.0.0"
-  resolved "http://172.16.116.19:7001/intersperse/download/intersperse-1.0.0.tgz#f2561fb1cfef9f5277cc3347a22886b4351a5181"
-  integrity sha1-8lYfsc/vn1J3zDNHoiiGtDUaUYE=
 
 invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
@@ -5897,11 +5907,6 @@ is-installed-globally@^0.1.0:
     global-dirs "^0.1.0"
     is-path-inside "^1.0.0"
 
-is-negative-zero@^2.0.0:
-  version "2.0.0"
-  resolved "http://172.16.116.19:7001/is-negative-zero/download/is-negative-zero-2.0.0.tgz#9553b121b0fac28869da9ed459e20c7543788461"
-  integrity sha1-lVOxIbD6wohp2p7UWeIMdUN4hGE=
-
 is-npm@^1.0.0:
   version "1.0.0"
   resolved "http://172.16.116.19:7001/is-npm/download/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
@@ -6093,6 +6098,11 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "http://172.16.116.19:7001/isexe/download/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
+
+ismobilejs@^0.5.1:
+  version "0.5.2"
+  resolved "http://172.16.116.19:7001/ismobilejs/download/ismobilejs-0.5.2.tgz#e81bacf6187c532ad8348355f4fecd6e6adfdce1"
+  integrity sha1-6Bus9hh8UyrYNINV9P7Nbmrf3OE=
 
 isobject@^2.0.0:
   version "2.1.0"
@@ -7024,7 +7034,7 @@ lodash.uniq@^4.5.0:
   resolved "http://172.16.116.19:7001/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
 
-lodash@^4.17.15, lodash@^4.17.5, lodash@^4.2.1:
+lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.5, lodash@^4.2.1:
   version "4.17.15"
   resolved "http://172.16.116.19:7001/lodash/download/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
@@ -7378,10 +7388,15 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   dependencies:
     minimist "0.0.8"
 
-moment@2.x, moment@^2.18.1, moment@^2.22.2:
+moment@2.x, moment@^2.18.1:
   version "2.22.2"
   resolved "http://172.16.116.19:7001/moment/download/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
+
+moment@^2.24.0:
+  version "2.24.0"
+  resolved "http://172.16.116.19:7001/moment/download/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
 
 moo@^0.4.3:
   version "0.4.3"
@@ -7604,17 +7619,19 @@ node-pre-gyp@^0.10.0:
     semver "^5.3.0"
     tar "^4"
 
-noform@^1.1.3:
-  version "1.1.37"
-  resolved "http://172.16.116.19:7001/noform/download/noform-1.1.37.tgz#a5958918151eedc86d37ca3ee905245c05b394b5"
-  integrity sha1-pZWJGBUe7chtN8o+6QUkXAWzlLU=
+noform@^1.3.38:
+  version "1.3.38"
+  resolved "http://172.16.116.19:7001/noform/download/noform-1.3.38.tgz#f2cf4e6f4bf9fb2405ce16bf939a7e1c2f847523"
+  integrity sha1-8s9Ob0v5+yQFzha/k5p+HC+EdSM=
   dependencies:
     "@babel/runtime" "^7.1.2"
     async-validator "^1.8.2"
+    babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     events "2.x"
     moment "^2.18.1"
     prop-types "15.x"
+    react-fast-compare "^2.0.4"
 
 nomnom@~1.6.2:
   version "1.6.2"
@@ -7856,10 +7873,10 @@ obuf@^1.0.0, obuf@^1.1.1:
   resolved "http://172.16.116.19:7001/obuf/download/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha1-Cb6jND1BhZ69RGKS0RydTbYZCE4=
 
-omit.js@^1.0.0:
-  version "1.0.0"
-  resolved "http://172.16.116.19:7001/omit.js/download/omit.js-1.0.0.tgz#e013cb86a7517b9cf6f7cfb0ddb4297256a99288"
-  integrity sha1-4BPLhqdRe5z298+w3bQpclapkog=
+omit.js@^1.0.2:
+  version "1.0.2"
+  resolved "http://172.16.116.19:7001/omit.js/download/omit.js-1.0.2.tgz#91a14f0eba84066dfa015bf30e474c47f30bc858"
+  integrity sha1-kaFPDrqEBm36AVvzDkdMR/MLyFg=
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -8639,11 +8656,6 @@ preserve@^0.2.0:
   resolved "http://172.16.116.19:7001/preserve/download/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-prettier@^1.14.3:
-  version "1.15.3"
-  resolved "http://172.16.116.19:7001/prettier/download/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
-  integrity sha1-H+qsW90YEje1Tb5l2HTgKhRyeGo=
-
 pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "http://172.16.116.19:7001/pretty-bytes/download/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
@@ -8719,7 +8731,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.2:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.2:
   version "15.6.2"
   resolved "http://172.16.116.19:7001/prop-types/download/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha1-BdXKd7RFPphdYPx/+MhZCUpJcQI=
@@ -8727,7 +8739,7 @@ prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, pr
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.7.2:
   version "15.7.2"
   resolved "http://172.16.116.19:7001/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -8915,7 +8927,7 @@ rc-align@^2.4.0, rc-align@^2.4.1:
     prop-types "^15.5.8"
     rc-util "^4.0.4"
 
-rc-animate@2.x, rc-animate@^2.3.0, rc-animate@^2.5.4:
+rc-animate@2.x, rc-animate@^2.3.0:
   version "2.6.0"
   resolved "http://172.16.116.19:7001/rc-animate/download/rc-animate-2.6.0.tgz#ca8440d042781af7a1329d84f97ea94794c5ec15"
   integrity sha1-yoRA0EJ4GvehMp2E+X6pR5TF7BU=
@@ -8927,7 +8939,20 @@ rc-animate@2.x, rc-animate@^2.3.0, rc-animate@^2.5.4:
     raf "^3.4.0"
     react-lifecycles-compat "^3.0.4"
 
-rc-animate@^3.0.0-rc.1, rc-animate@^3.0.0-rc.4, rc-animate@^3.0.0-rc.5:
+rc-animate@^2.6.0, rc-animate@^2.8.2, rc-animate@^2.8.3:
+  version "2.10.0"
+  resolved "http://172.16.116.19:7001/rc-animate/download/rc-animate-2.10.0.tgz#d2224cee4700cc9e9836700eb47af6b6e41a080c"
+  integrity sha1-0iJM7kcAzJ6YNnAOtHr2tuQaCAw=
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.6"
+    css-animation "^1.3.2"
+    prop-types "15.x"
+    raf "^3.4.0"
+    rc-util "^4.8.0"
+    react-lifecycles-compat "^3.0.4"
+
+rc-animate@^3.0.0-rc.1:
   version "3.0.0-rc.6"
   resolved "http://172.16.116.19:7001/rc-animate/download/rc-animate-3.0.0-rc.6.tgz#04288eefa118e0cae214536c8a903ffaac1bc3fb"
   integrity sha1-BCiO76EY4MriFFNsipA/+qwbw/s=
@@ -8941,76 +8966,81 @@ rc-animate@^3.0.0-rc.1, rc-animate@^3.0.0-rc.4, rc-animate@^3.0.0-rc.5:
     rc-util "^4.5.0"
     react-lifecycles-compat "^3.0.4"
 
-rc-calendar@~9.8.0:
-  version "9.8.0"
-  resolved "http://172.16.116.19:7001/rc-calendar/download/rc-calendar-9.8.0.tgz#c3241320eae61c07b444c98ce34fde72b96c8059"
-  integrity sha1-wyQTIOrmHAe0RMmM40/ecrlsgFk=
+rc-calendar@~9.15.5:
+  version "9.15.5"
+  resolved "http://172.16.116.19:7001/rc-calendar/download/rc-calendar-9.15.5.tgz#21ab0cb2a5659d85fe6faead13d3ed764dd47c01"
+  integrity sha1-IasMsqVlnYX+b66tE9Ptdk3UfAE=
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
-    create-react-class "^15.5.2"
     moment "2.x"
     prop-types "^15.5.8"
     rc-trigger "^2.2.0"
     rc-util "^4.1.1"
+    react-lifecycles-compat "^3.0.4"
 
-rc-cascader@~0.16.0:
-  version "0.16.2"
-  resolved "http://172.16.116.19:7001/rc-cascader/download/rc-cascader-0.16.2.tgz#e8f44702523d88aa3f28e92e440f1de5ec384d41"
-  integrity sha1-6PRHAlI9iKo/KOkuRA8d5ew4TUE=
+rc-cascader@~0.17.4:
+  version "0.17.5"
+  resolved "http://172.16.116.19:7001/rc-cascader/download/rc-cascader-0.17.5.tgz#4fde91d23b7608c420263c38eee9c0687f80f7dc"
+  integrity sha1-T96R0jt2CMQgJjw47unAaH+A99w=
   dependencies:
-    array-tree-filter "^1.0.0"
+    array-tree-filter "^2.1.0"
     prop-types "^15.5.8"
     rc-trigger "^2.2.0"
     rc-util "^4.0.4"
+    react-lifecycles-compat "^3.0.4"
     shallow-equal "^1.0.0"
     warning "^4.0.1"
 
-rc-checkbox@~2.1.5:
-  version "2.1.5"
-  resolved "http://172.16.116.19:7001/rc-checkbox/download/rc-checkbox-2.1.5.tgz#411858448c0ee2a797ef8544dac63bcaeef722ef"
-  integrity sha1-QRhYRIwO4qeX74VE2sY7yu73Iu8=
+rc-checkbox@~2.1.6:
+  version "2.1.7"
+  resolved "http://172.16.116.19:7001/rc-checkbox/download/rc-checkbox-2.1.7.tgz#ae6785525cf35fa4c62d706c4a1ff7b2b1fcb821"
+  integrity sha1-rmeFUlzzX6TGLXBsSh/3srH8uCE=
   dependencies:
     babel-runtime "^6.23.0"
     classnames "2.x"
     prop-types "15.x"
-    rc-util "^4.0.4"
+    react-lifecycles-compat "^3.0.4"
 
-rc-collapse@~1.10.0:
-  version "1.10.0"
-  resolved "http://172.16.116.19:7001/rc-collapse/download/rc-collapse-1.10.0.tgz#b39578633a1e033391597776758763a10d3bc261"
-  integrity sha1-s5V4YzoeAzORWXd2dYdjoQ07wmE=
+rc-collapse@~1.11.3:
+  version "1.11.7"
+  resolved "http://172.16.116.19:7001/rc-collapse/download/rc-collapse-1.11.7.tgz#0b0d621aac36a980910cfb45365ac2c769455edb"
+  integrity sha1-Cw1iGqw2qYCRDPtFNlrCx2lFXts=
   dependencies:
     classnames "2.x"
     css-animation "1.x"
     prop-types "^15.5.6"
     rc-animate "2.x"
+    react-is "^16.7.0"
+    react-lifecycles-compat "^3.0.4"
+    shallowequal "^1.1.0"
 
-rc-dialog@~7.2.1:
-  version "7.2.1"
-  resolved "http://172.16.116.19:7001/rc-dialog/download/rc-dialog-7.2.1.tgz#ac92fcffdf2a0eaa64b77f829336653d911a57be"
-  integrity sha1-rJL8/98qDqpkt3+CkzZlPZEaV74=
+rc-dialog@~7.5.2:
+  version "7.5.7"
+  resolved "http://172.16.116.19:7001/rc-dialog/download/rc-dialog-7.5.7.tgz#1f47b24bffab2bf878be33316b28a617b8a4747a"
+  integrity sha1-H0eyS/+rK/h4vjMxayimF7ikdHo=
   dependencies:
     babel-runtime "6.x"
     rc-animate "2.x"
-    rc-util "^4.4.0"
+    rc-util "^4.8.1"
 
-rc-drawer@~1.7.6:
-  version "1.7.6"
-  resolved "http://172.16.116.19:7001/rc-drawer/download/rc-drawer-1.7.6.tgz#925ce0768cf81ef5fa83eb22d90c603422b1b1b1"
-  integrity sha1-klzgdoz4HvX6g+si2QxgNCKxsbE=
+rc-drawer@~2.0.1:
+  version "2.0.9"
+  resolved "http://172.16.116.19:7001/rc-drawer/download/rc-drawer-2.0.9.tgz#d1d07b74416b50d22082b5886ec061be2b2b15fc"
+  integrity sha1-0dB7dEFrUNIggrWIbsBhvisrFfw=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
-    prop-types "^15.5.0"
-    rc-util "^4.5.1"
+    rc-util "^4.7.0"
+    react-lifecycles-compat "^3.0.4"
 
-rc-dropdown@~2.2.1:
-  version "2.2.1"
-  resolved "http://172.16.116.19:7001/rc-dropdown/download/rc-dropdown-2.2.1.tgz#172b6e87f0909fe8ab983e375f62e2866f3250c3"
-  integrity sha1-Fytuh/CQn+irmD43X2Lihm8yUMM=
+rc-dropdown@~2.4.1:
+  version "2.4.1"
+  resolved "http://172.16.116.19:7001/rc-dropdown/download/rc-dropdown-2.4.1.tgz#aaef6eb3a5152cdd9982895c2a78d9b5f046cdec"
+  integrity sha1-qu9us6UVLN2ZgolcKnjZtfBGzew=
   dependencies:
     babel-runtime "^6.26.0"
+    classnames "^2.2.6"
     prop-types "^15.5.8"
     rc-trigger "^2.5.1"
     react-lifecycles-compat "^3.0.2"
@@ -9028,32 +9058,32 @@ rc-editor-core@~0.8.3:
     prop-types "^15.5.8"
     setimmediate "^1.0.5"
 
-rc-editor-mention@^1.1.7:
-  version "1.1.12"
-  resolved "http://172.16.116.19:7001/rc-editor-mention/download/rc-editor-mention-1.1.12.tgz#896bcb172112f18812e96fdd33ba603c0fc7306a"
-  integrity sha1-iWvLFyES8YgS6W/dM7pgPA/HMGo=
+rc-editor-mention@^1.1.13:
+  version "1.1.13"
+  resolved "http://172.16.116.19:7001/rc-editor-mention/download/rc-editor-mention-1.1.13.tgz#9f1cab1065f86b01523840321790c2ab12ac5e8b"
+  integrity sha1-nxyrEGX4awFSOEAyF5DCqxKsXos=
   dependencies:
     babel-runtime "^6.23.0"
     classnames "^2.2.5"
     dom-scroll-into-view "^1.2.0"
     draft-js "~0.10.0"
-    immutable "^3.7.4"
+    immutable "~3.7.4"
     prop-types "^15.5.8"
     rc-animate "^2.3.0"
     rc-editor-core "~0.8.3"
 
-rc-form@^2.2.3:
-  version "2.2.7"
-  resolved "http://172.16.116.19:7001/rc-form/download/rc-form-2.2.7.tgz#8880851b9cd4a9c911f5272c91db73978a72377d"
-  integrity sha1-iICFG5zUqckR9Scskdtzl4pyN30=
+rc-form@^2.4.5:
+  version "2.4.8"
+  resolved "http://172.16.116.19:7001/rc-form/download/rc-form-2.4.8.tgz#79a1f124d4fa81dff2af2992e94aa3e58cad683c"
+  integrity sha1-eaHxJNT6gd/yrymS6Uqj5YytaDw=
   dependencies:
-    async-validator "~1.8.5"
+    async-validator "~1.11.3"
     babel-runtime "6.x"
     create-react-class "^15.5.3"
     dom-scroll-into-view "1.x"
-    hoist-non-react-statics "^2.3.1"
+    hoist-non-react-statics "^3.3.0"
     lodash "^4.17.4"
-    warning "^3.0.0"
+    warning "^4.0.3"
 
 rc-hammerjs@~0.6.0:
   version "0.6.9"
@@ -9064,19 +9094,30 @@ rc-hammerjs@~0.6.0:
     hammerjs "^2.0.8"
     prop-types "^15.5.9"
 
-rc-input-number@~4.3.0:
-  version "4.3.7"
-  resolved "http://172.16.116.19:7001/rc-input-number/download/rc-input-number-4.3.7.tgz#5c11a2015812c414492d8f0408ef04bb48fd6e1c"
-  integrity sha1-XBGiAVgSxBRJLY8ECO8Eu0j9bhw=
+rc-input-number@~4.5.0:
+  version "4.5.0"
+  resolved "http://172.16.116.19:7001/rc-input-number/download/rc-input-number-4.5.0.tgz#0e1728101fcec2ee0bce4e20bf84c669895c4fb9"
+  integrity sha1-DhcoEB/Owu4Lzk4gv4TGaYlcT7k=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.0"
-    is-negative-zero "^2.0.0"
     prop-types "^15.5.7"
     rc-util "^4.5.1"
     rmc-feedback "^2.0.0"
 
-rc-menu@^7.3.0, rc-menu@~7.4.12:
+rc-mentions@~0.4.0:
+  version "0.4.0"
+  resolved "http://172.16.116.19:7001/rc-mentions/download/rc-mentions-0.4.0.tgz#483552c088290dbcddd059a0846e9f207ecc3539"
+  integrity sha1-SDVSwIgpDbzd0FmghG6fIH7MNTk=
+  dependencies:
+    "@ant-design/create-react-context" "^0.2.4"
+    classnames "^2.2.6"
+    rc-menu "^7.4.22"
+    rc-trigger "^2.6.2"
+    rc-util "^4.6.0"
+    react-lifecycles-compat "^3.0.4"
+
+rc-menu@^7.3.0:
   version "7.4.20"
   resolved "http://172.16.116.19:7001/rc-menu/download/rc-menu-7.4.20.tgz#5c322d330142c465d240d8da7d4206a2a329096c"
   integrity sha1-XDItMwFCxGXSQNjafUIGoqMpCWw=
@@ -9092,10 +9133,27 @@ rc-menu@^7.3.0, rc-menu@~7.4.12:
     rc-util "^4.1.0"
     resize-observer-polyfill "^1.5.0"
 
-rc-notification@~3.3.0:
-  version "3.3.0"
-  resolved "http://172.16.116.19:7001/rc-notification/download/rc-notification-3.3.0.tgz#af74fe7fc9ee4040eaa5e72dbd6d4088a3ecae2d"
-  integrity sha1-r3T+f8nuQEDqpectvW1AiKPsri0=
+rc-menu@^7.4.22, rc-menu@~7.4.23:
+  version "7.4.28"
+  resolved "http://172.16.116.19:7001/rc-menu/download/rc-menu-7.4.28.tgz#3c806463f464c355809bb380f0dbe01a954b89db"
+  integrity sha1-PIBkY/Rkw1WAm7OA8NvgGpVLids=
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    dom-scroll-into-view "1.x"
+    ismobilejs "^0.5.1"
+    mini-store "^2.0.0"
+    mutationobserver-shim "^0.3.2"
+    prop-types "^15.5.6"
+    rc-animate "2.x"
+    rc-trigger "^2.3.0"
+    rc-util "^4.1.0"
+    resize-observer-polyfill "^1.5.0"
+
+rc-notification@~3.3.1:
+  version "3.3.1"
+  resolved "http://172.16.116.19:7001/rc-notification/download/rc-notification-3.3.1.tgz#0baa3e70f8d40ab015ce8fa78c260c490fc7beb4"
+  integrity sha1-C6o+cPjUCrAVzo+njCYMSQ/HvrQ=
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -9103,46 +9161,48 @@ rc-notification@~3.3.0:
     rc-animate "2.x"
     rc-util "^4.0.4"
 
-rc-pagination@~1.17.3:
-  version "1.17.3"
-  resolved "http://172.16.116.19:7001/rc-pagination/download/rc-pagination-1.17.3.tgz#4c5334adef607f7a80b90ca7501a1e962491aae5"
-  integrity sha1-TFM0re9gf3qAuQynUBoeliSRquU=
+rc-pagination@~1.20.5:
+  version "1.20.6"
+  resolved "http://172.16.116.19:7001/rc-pagination/download/rc-pagination-1.20.6.tgz#7c717084f1222c9c6475d9a53dec314f607f8152"
+  integrity sha1-fHFwhPEiLJxkddmlPewxT2B/gVI=
   dependencies:
     babel-runtime "6.x"
+    classnames "^2.2.6"
     prop-types "^15.5.7"
+    react-lifecycles-compat "^3.0.4"
 
-rc-progress@~2.2.6:
-  version "2.2.6"
-  resolved "http://172.16.116.19:7001/rc-progress/download/rc-progress-2.2.6.tgz#d5d07c07333b352a9ef13230c5940e13336c1e62"
-  integrity sha1-1dB8BzM7NSqe8TIwxZQOEzNsHmI=
+rc-progress@~2.5.0:
+  version "2.5.2"
+  resolved "http://172.16.116.19:7001/rc-progress/download/rc-progress-2.5.2.tgz#ab01ba4e5d2fa36fc9f6f058b10b720e7315560c"
+  integrity sha1-qwG6Tl0vo2/J9vBYsQtyDnMVVgw=
   dependencies:
     babel-runtime "6.x"
     prop-types "^15.5.8"
 
-rc-queue-anim@^1.6.8:
-  version "1.6.8"
-  resolved "http://172.16.116.19:7001/rc-queue-anim/download/rc-queue-anim-1.6.8.tgz#e6bbae76e6f3eb732a727fd5f9eeb1d9f9fdf081"
-  integrity sha1-5ruudubz63Mqcn/V+e6x2fn98IE=
+rc-queue-anim@^1.8.2:
+  version "1.8.2"
+  resolved "http://172.16.116.19:7001/rc-queue-anim/download/rc-queue-anim-1.8.2.tgz#cd48ef56cad44c7d265b7bd4b5f977275dd42106"
+  integrity sha1-zUjvVsrUTH0mW3vUtfl3J13UIQY=
   dependencies:
     babel-runtime "6.x"
     prop-types "^15.6.0"
-    rc-tween-one "^2.2.8"
+    rc-tween-one "^2.5.0"
+    react-lifecycles-compat "^3.0.4"
 
-rc-rate@~2.4.2:
-  version "2.4.3"
-  resolved "http://172.16.116.19:7001/rc-rate/download/rc-rate-2.4.3.tgz#70434905faf84c9a0694bec4bdbd9b9a9099318f"
-  integrity sha1-cENJBfr4TJoGlL7Evb2bmpCZMY8=
+rc-rate@~2.5.0:
+  version "2.5.0"
+  resolved "http://172.16.116.19:7001/rc-rate/download/rc-rate-2.5.0.tgz#72d4984a03d0a7a0e6779c7a79efcea27626abf6"
+  integrity sha1-ctSYSgPQp6Dmd5x6ee/OonYmq/Y=
   dependencies:
-    babel-runtime "^6.26.0"
     classnames "^2.2.5"
     prop-types "^15.5.8"
     rc-util "^4.3.0"
     react-lifecycles-compat "^3.0.4"
 
-rc-select@~8.6.0:
-  version "8.6.4"
-  resolved "http://172.16.116.19:7001/rc-select/download/rc-select-8.6.4.tgz#0b80b486d16070640623d1cd43e828035023ab09"
-  integrity sha1-C4C0htFgcGQGI9HNQ+goA1Ajqwk=
+rc-select@~9.2.0:
+  version "9.2.1"
+  resolved "http://172.16.116.19:7001/rc-select/download/rc-select-9.2.1.tgz#0fbf47a933c36e1e6ef76c88fab32f58029e6a01"
+  integrity sha1-D79HqTPDbh5u92yI+rMvWAKeagE=
   dependencies:
     babel-runtime "^6.23.0"
     classnames "2.x"
@@ -9157,10 +9217,10 @@ rc-select@~8.6.0:
     react-lifecycles-compat "^3.0.2"
     warning "^4.0.2"
 
-rc-slider@~8.6.3:
-  version "8.6.3"
-  resolved "http://172.16.116.19:7001/rc-slider/download/rc-slider-8.6.3.tgz#1ca0e0bd2863252741de75e7bf8c9f2cfcffccb7"
-  integrity sha1-HKDgvShjJSdB3nXnv4yfLPz/zLc=
+rc-slider@~8.6.11:
+  version "8.6.13"
+  resolved "http://172.16.116.19:7001/rc-slider/download/rc-slider-8.6.13.tgz#88a8150c2dda6709f3f119135de11fba80af765b"
+  integrity sha1-iKgVDC3aZwnz8RkTXeEfuoCvdls=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
@@ -9168,31 +9228,31 @@ rc-slider@~8.6.3:
     rc-tooltip "^3.7.0"
     rc-util "^4.0.4"
     shallowequal "^1.0.1"
-    warning "^3.0.0"
+    warning "^4.0.3"
 
-rc-steps@~3.3.0:
-  version "3.3.0"
-  resolved "http://172.16.116.19:7001/rc-steps/download/rc-steps-3.3.0.tgz#8817c438a6a5648997c7edb51bde727e6f32e132"
-  integrity sha1-iBfEOKalZImXx+21G95yfm8y4TI=
+rc-steps@~3.5.0:
+  version "3.5.0"
+  resolved "http://172.16.116.19:7001/rc-steps/download/rc-steps-3.5.0.tgz#36b2a7f1f49907b0d90363884b18623caf9fb600"
+  integrity sha1-NrKn8fSZB7DZA2OISxhiPK+ftgA=
   dependencies:
     babel-runtime "^6.23.0"
     classnames "^2.2.3"
     lodash "^4.17.5"
     prop-types "^15.5.7"
 
-rc-switch@~1.8.0:
-  version "1.8.0"
-  resolved "http://172.16.116.19:7001/rc-switch/download/rc-switch-1.8.0.tgz#cff32fd04c406d8c0c0397e69bc36350a333e236"
-  integrity sha1-z/Mv0ExAbYwMA5fmm8NjUKMz4jY=
+rc-switch@~1.9.0:
+  version "1.9.0"
+  resolved "http://172.16.116.19:7001/rc-switch/download/rc-switch-1.9.0.tgz#ab2b878f2713c681358a453391976c9b95b290f7"
+  integrity sha1-qyuHjycTxoE1ikUzkZdsm5WykPc=
   dependencies:
-    babel-runtime "^6.23.0"
     classnames "^2.2.1"
     prop-types "^15.5.6"
+    react-lifecycles-compat "^3.0.4"
 
-rc-table@~6.4.0:
-  version "6.4.0"
-  resolved "http://172.16.116.19:7001/rc-table/download/rc-table-6.4.0.tgz#ea26a4002a3fde9a26f7d7889bb016e7b8e5a598"
-  integrity sha1-6iakACo/3pom99eIm7AW57jlpZg=
+rc-table@~6.7.0:
+  version "6.7.0"
+  resolved "http://172.16.116.19:7001/rc-table/download/rc-table-6.7.0.tgz#8aca002f84a43a2d51a4fcda0f7a51694154286d"
+  integrity sha1-isoAL4SkOi1RpPzaD3pRaUFUKG0=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
@@ -9205,31 +9265,34 @@ rc-table@~6.4.0:
     shallowequal "^1.0.2"
     warning "^3.0.0"
 
-rc-tabs@~9.5.2:
-  version "9.5.7"
-  resolved "http://172.16.116.19:7001/rc-tabs/download/rc-tabs-9.5.7.tgz#bb4fd7d50e8f1c861c09220a551b258a96429e35"
-  integrity sha1-u0/X1Q6PHIYcCSIKVRslipZCnjU=
+rc-tabs@~9.6.4:
+  version "9.6.7"
+  resolved "http://172.16.116.19:7001/rc-tabs/download/rc-tabs-9.6.7.tgz#c546115a351f5ed779ea5524143157f48ee0c015"
+  integrity sha1-xUYRWjUfXtd56lUkFDFX9I7gwBU=
   dependencies:
+    "@ant-design/create-react-context" "^0.2.4"
     babel-runtime "6.x"
     classnames "2.x"
-    create-react-context "0.2.2"
     lodash "^4.17.5"
     prop-types "15.x"
     raf "^3.4.1"
     rc-hammerjs "~0.6.0"
     rc-util "^4.0.4"
-    warning "^3.0.0"
+    react-lifecycles-compat "^3.0.4"
+    resize-observer-polyfill "^1.5.1"
+    warning "^4.0.3"
 
-rc-time-picker@~3.4.0:
-  version "3.4.0"
-  resolved "http://172.16.116.19:7001/rc-time-picker/download/rc-time-picker-3.4.0.tgz#274e80122f885b37a4eace7393f3a25334fa141f"
-  integrity sha1-J06AEi+IWzek6s5zk/OiUzT6FB8=
+rc-time-picker@~3.7.1:
+  version "3.7.2"
+  resolved "http://172.16.116.19:7001/rc-time-picker/download/rc-time-picker-3.7.2.tgz#fabe5501adf1374d31a2d3b47f1ba89fc2dc2467"
+  integrity sha1-+r5VAa3xN00xotO0fxuon8LcJGc=
   dependencies:
-    babel-runtime "6.x"
     classnames "2.x"
     moment "2.x"
     prop-types "^15.5.8"
+    raf "^3.4.1"
     rc-trigger "^2.2.0"
+    react-lifecycles-compat "^3.0.4"
 
 rc-tooltip@^3.7.0, rc-tooltip@~3.7.3:
   version "3.7.3"
@@ -9240,35 +9303,48 @@ rc-tooltip@^3.7.0, rc-tooltip@~3.7.3:
     prop-types "^15.5.8"
     rc-trigger "^2.2.2"
 
-rc-tree-select@~2.4.0:
-  version "2.4.3"
-  resolved "http://172.16.116.19:7001/rc-tree-select/download/rc-tree-select-2.4.3.tgz#0e9cc8c209e32298d01166e26ad2b03e22f9a7ea"
-  integrity sha1-DpzIwgnjIpjQEWbiatKwPiL5p+o=
+rc-tree-select@~2.9.1:
+  version "2.9.1"
+  resolved "http://172.16.116.19:7001/rc-tree-select/download/rc-tree-select-2.9.1.tgz#d076b8ce5bf432df3fdd8a6a01cdd9c93c8e7399"
+  integrity sha1-0Ha4zlv0Mt8/3YpqAc3ZyTyOc5k=
   dependencies:
-    babel-runtime "^6.23.0"
     classnames "^2.2.1"
+    dom-scroll-into-view "^1.2.1"
     prop-types "^15.5.8"
     raf "^3.4.0"
-    rc-animate "^3.0.0-rc.4"
-    rc-tree "~1.14.3"
+    rc-animate "^2.8.2"
+    rc-tree "~2.0.0"
     rc-trigger "^3.0.0-rc.2"
     rc-util "^4.5.0"
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
     warning "^4.0.1"
 
-rc-tree@~1.14.3, rc-tree@~1.14.6:
-  version "1.14.8"
-  resolved "http://172.16.116.19:7001/rc-tree/download/rc-tree-1.14.8.tgz#31a9652d71c015370d7b6c2109c865244deb9fde"
-  integrity sha1-MallLXHAFTcNe2whCchlJE3rn94=
+rc-tree@~2.0.0:
+  version "2.0.0"
+  resolved "http://172.16.116.19:7001/rc-tree/download/rc-tree-2.0.0.tgz#68fc4c9ab696943b279a143619e2ecf05918fb53"
+  integrity sha1-aPxMmraWlDsnmhQ2GeLs8FkY+1M=
   dependencies:
     babel-runtime "^6.23.0"
     classnames "2.x"
     prop-types "^15.5.8"
-    rc-animate "^3.0.0-rc.5"
+    rc-animate "^2.6.0"
     rc-util "^4.5.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
+
+rc-tree@~2.1.0:
+  version "2.1.2"
+  resolved "http://172.16.116.19:7001/rc-tree/download/rc-tree-2.1.2.tgz#c70546cf1081e1c27bffa314a966e2e4d06b3f2b"
+  integrity sha1-xwVGzxCB4cJ7/6MUqWbi5NBrPys=
+  dependencies:
+    "@ant-design/create-react-context" "^0.2.4"
+    classnames "2.x"
+    prop-types "^15.5.8"
+    rc-animate "^2.6.0"
+    rc-util "^4.5.1"
+    react-lifecycles-compat "^3.0.4"
+    warning "^4.0.3"
 
 rc-trigger@^2.2.0, rc-trigger@^2.2.2, rc-trigger@^2.3.0, rc-trigger@^2.5.1, rc-trigger@^2.5.4, rc-trigger@^2.6.2:
   version "2.6.2"
@@ -9295,26 +9371,27 @@ rc-trigger@^3.0.0-rc.2:
     rc-animate "^3.0.0-rc.1"
     rc-util "^4.4.0"
 
-rc-tween-one@^2.2.8:
-  version "2.2.18"
-  resolved "http://172.16.116.19:7001/rc-tween-one/download/rc-tween-one-2.2.18.tgz#7fa386a53fd94edacb93f11c36bf822fa32e181a"
-  integrity sha1-f6OGpT/ZTtrLk/EcNr+CL6MuGBo=
+rc-tween-one@^2.5.0:
+  version "2.6.3"
+  resolved "http://172.16.116.19:7001/rc-tween-one/download/rc-tween-one-2.6.3.tgz#9afe966d0fcdcf9af1a8ee658d72ed20a525ed46"
+  integrity sha1-mv6WbQ/Nz5rxqO5ljXLtIKUl7UY=
   dependencies:
     babel-runtime "6.x"
     prop-types "^15.6.1"
     raf "~3.4.0"
-    style-utils "~0.1.13"
+    react-lifecycles-compat "^3.0.4"
+    style-utils "~0.2.0"
     tween-functions "~1.2.0"
 
-rc-upload@~2.6.0:
-  version "2.6.0"
-  resolved "http://172.16.116.19:7001/rc-upload/download/rc-upload-2.6.0.tgz#9cfb8dda8b1bbae823a076d2dd81a5c0b3f0aa00"
-  integrity sha1-nPuN2osbuugjoHbS3YGlwLPwqgA=
+rc-upload@~2.7.0:
+  version "2.7.0"
+  resolved "http://172.16.116.19:7001/rc-upload/download/rc-upload-2.7.0.tgz#f279b758655eb5f99ebf82a5a2648d80d88e0ff4"
+  integrity sha1-8nm3WGVetfmev4KlomSNgNiOD/Q=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
     prop-types "^15.5.7"
-    warning "2.x"
+    warning "4.x"
 
 rc-util@^4.0.4, rc-util@^4.1.0, rc-util@^4.1.1, rc-util@^4.3.0, rc-util@^4.4.0, rc-util@^4.5.0, rc-util@^4.5.1:
   version "4.6.0"
@@ -9324,6 +9401,17 @@ rc-util@^4.0.4, rc-util@^4.1.0, rc-util@^4.1.1, rc-util@^4.3.0, rc-util@^4.4.0, 
     add-dom-event-listener "^1.1.0"
     babel-runtime "6.x"
     prop-types "^15.5.10"
+    shallowequal "^0.2.2"
+
+rc-util@^4.10.0, rc-util@^4.6.0, rc-util@^4.7.0, rc-util@^4.8.0, rc-util@^4.8.1:
+  version "4.11.0"
+  resolved "http://172.16.116.19:7001/rc-util/download/rc-util-4.11.0.tgz#cf437dcff74ca08a8565ae14f0368acb3a650796"
+  integrity sha1-z0N9z/dMoIqFZa4U8DaKyzplB5Y=
+  dependencies:
+    add-dom-event-listener "^1.1.0"
+    babel-runtime "6.x"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.4"
     shallowequal "^0.2.2"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
@@ -9390,12 +9478,17 @@ react-error-overlay@^4.0.1:
   resolved "http://172.16.116.19:7001/react-error-overlay/download/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
   integrity sha1-QXrdsIFKkPOnCC6sunzuWI0A2ok=
 
+react-fast-compare@^2.0.4:
+  version "2.0.4"
+  resolved "http://172.16.116.19:7001/react-fast-compare/download/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
+  integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
+
 react-is@^16.6.1, react-is@^16.6.3:
   version "16.6.3"
   resolved "http://172.16.116.19:7001/react-is/download/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha1-0tdGL8/L5uwNpWrWkEfkflbn6sA=
 
-react-is@^16.8.1:
+react-is@^16.7.0, react-is@^16.8.1:
   version "16.9.0"
   resolved "http://172.16.116.19:7001/react-is/download/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha1-IcqVYTmarQ/xp3AcAWg+jKmB7cs=
@@ -9461,16 +9554,15 @@ react-router@^4.2.0, react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-slick@~0.23.2:
-  version "0.23.2"
-  resolved "http://172.16.116.19:7001/react-slick/download/react-slick-0.23.2.tgz#8d8bdbc77a6678e8ad36f50c32578c7c0f1c54f6"
-  integrity sha1-jYvbx3pmeOitNvUMMleMfA8cVPY=
+react-slick@~0.25.2:
+  version "0.25.2"
+  resolved "http://172.16.116.19:7001/react-slick/download/react-slick-0.25.2.tgz#56331b67d47d8bcfe2dceb6acab1c8fd5bd1f6bc"
+  integrity sha1-VjMbZ9R9i8/i3OtqyrHI/VvR9rw=
   dependencies:
     classnames "^2.2.5"
     enquire.js "^2.1.6"
     json2mq "^0.2.0"
     lodash.debounce "^4.0.8"
-    prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
 react-test-renderer@^16.0.0-0:
@@ -9907,6 +9999,11 @@ resize-observer-polyfill@^1.5.0:
   version "1.5.0"
   resolved "http://172.16.116.19:7001/resize-observer-polyfill/download/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
   integrity sha1-Zg/x2XEqI4K6osrUUKRxYgn5ymk=
+
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "http://172.16.116.19:7001/resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
@@ -10807,10 +10904,10 @@ style-loader@^0.20.3:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
-style-utils@~0.1.13:
-  version "0.1.22"
-  resolved "http://172.16.116.19:7001/style-utils/download/style-utils-0.1.22.tgz#46a3f2cd4499603a46169352ac1ed01f23470aa0"
-  integrity sha1-RqPyzUSZYDpGFpNSrB7QHyNHCqA=
+style-utils@~0.2.0:
+  version "0.2.0"
+  resolved "http://172.16.116.19:7001/style-utils/download/style-utils-0.2.0.tgz#3d8614931b8ff6e1eea0545f1dbfaf271bb1aa7e"
+  integrity sha1-PYYUkxuP9uHuoFRfHb+vJxuxqn4=
 
 stylint@^1.5.9:
   version "1.5.9"
@@ -11143,6 +11240,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+toggle-selection@^1.0.6:
+  version "1.0.6"
+  resolved "http://172.16.116.19:7001/toggle-selection/download/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
+  integrity sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
 
 toposort@^1.0.0:
   version "1.0.7"
@@ -11645,10 +11747,10 @@ walker@~1.0.5:
   dependencies:
     makeerror "1.0.x"
 
-warning@2.x:
-  version "2.1.0"
-  resolved "http://172.16.116.19:7001/warning/download/warning-2.1.0.tgz#21220d9c63afc77a8c92111e011af705ce0c6901"
-  integrity sha1-ISINnGOvx3qMkhEeARr3Bc4MaQE=
+warning@4.x, warning@^4.0.1, warning@^4.0.3, warning@~4.0.3:
+  version "4.0.3"
+  resolved "http://172.16.116.19:7001/warning/download/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha1-Fungd+uKhtavfWSqHgX9hbRnjKM=
   dependencies:
     loose-envify "^1.0.0"
 
@@ -11659,14 +11761,7 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.1:
-  version "4.0.3"
-  resolved "http://172.16.116.19:7001/warning/download/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
-  integrity sha1-Fungd+uKhtavfWSqHgX9hbRnjKM=
-  dependencies:
-    loose-envify "^1.0.0"
-
-warning@^4.0.2, warning@~4.0.2:
+warning@^4.0.2:
   version "4.0.2"
   resolved "http://172.16.116.19:7001/warning/download/warning-4.0.2.tgz#aa6876480872116fa3e11d434b0d0d8d91e44607"
   integrity sha1-qmh2SAhyEW+j4R1DSw0NjZHkRgc=
