@@ -48,7 +48,7 @@ export default class NoformModal extends React.Component {
 
     state={}
 
-    componentWillReceiveProps(nextProps, nextState) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextState) {
         const { fields: curFields } = this.props
         const { fields: nextFields } = nextProps
         if (JSON.stringify(curFields) !== JSON.stringify(nextFields)) {
