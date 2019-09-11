@@ -1,8 +1,21 @@
 {
     "message": "系统错误",
-    "flag": 0,
+    "flag": 1,
     "data": {
-        "username": "user01",
-        "nickname": "张三"
+        "userName": "liujian02",
+        "nickname": "刘建",
+        "privilegeList": [
+            "BOARD",
+            "RD_WORK_BOARD",
+            "RD_DATA_BOARD",
+            "RD_DATA_OVERVIEW",
+            "RD_ALARM",
+            "RD_THROUGH_TRAIN",
+            "RD_DEMO",
+            "PROJECT_MANAGE"
+        ],
+        "roleList": [
+            "RD_LEADER"
+        ]
     }
 }

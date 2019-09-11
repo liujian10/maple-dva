@@ -2,15 +2,13 @@ import { reducerHandler } from '@/common/util'
 import action from './actions'
 
 export const initState = {
-    list: [],
-    types: [],
-    submitLoading: false,
+    user: {},
 }
 export default reducerHandler({
-    [action.USER](state, { payload: list }) {
+    [action.USER.OK](state, { payload: user }) {
         return {
             ...state,
-            list,
+            user,
         }
     },
     [action.SET_STATE](state, { payload }) {

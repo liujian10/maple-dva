@@ -21,6 +21,7 @@
         ]
     },
     "dependencies": {
+        "@hot-loader/react-dom": "^16.9.0",
         "dva": "^2.4.0",
         "dva-loading": "^2.0.3",
         "history": "^4.9.0",
@@ -30,11 +31,11 @@
         "prop-types": "^15.7.2",
         "rc-queue-anim": "^1.8.2",
         "react": "^16.9.0",
-        "react-dom": "^16.9.0"
+        "react-hot-loader": "^4.12.12",
+        "react-router-config": "^5.0.1"
     },
     "devDependencies": {
         "antd": "^3.23.2",
-        "babel-plugin-dva-hmr": "^0.4.2",
         "babel-plugin-import": "^1.12.1",
         "babel-plugin-wrapper": "^1.0.17",
         "copy-webpack-plugin": "^5.0.4",

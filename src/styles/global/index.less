@@ -1,0 +1,152 @@
+@import "./common";
+
+body,
+html {
+    background-color: #E8EFF6;
+}
+
+:global {
+    #app {
+        display: flex;
+        min-width: 1200px;
+        flex-direction: column;
+        min-height: 100%;
+        font-size: 14px;
+        color: @global-font-color;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .ant-calendar-range-picker-separator,
+    .ant-calendar-picker-icon {
+        color: #ccc;
+    }
+
+    .ant-table-thead>tr>th {
+        font-weight: bold;
+    }
+
+    .ant-progress-success-bg,
+    .ant-progress-bg {
+        background-color: #5965E8;
+    }
+
+    .ant-time-picker-panel-input {
+        width: 100%;
+    }
+
+    a {
+        color: #5965E8;
+        text-decoration: none;
+
+        &:hover {
+            color: #7d88ff;
+        }
+    }
+
+    .ant-select-selection__rendered>ul:after {
+        content: none
+    }
+
+    .ant-table-thead>tr>th.ant-table-column-has-actions.ant-table-column-has-sorters,
+    .ant-table-thead>tr>th.ant-table-column-has-actions.ant-table-column-has-filters {
+        padding-right: 5px !important;
+    }
+
+    .ant-table-thead>tr>th .ant-table-column-sorter {
+        position: static;
+        display: inline-block;
+        vertical-align: text-top;
+        margin-left: 5px;
+        margin-top: 0;
+    }
+
+    .ant-skeleton-content .ant-skeleton-title,
+    .ant-skeleton-content .ant-skeleton-paragraph>li {
+        background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+    }
+
+    .ant-menu-sub.ant-menu-inline>.ant-menu-item,
+    .ant-menu-sub.ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title {
+        line-height: 48px;
+        height: 48px;
+    }
+
+    .ant-menu-vertical .ant-menu-item,
+    .ant-menu-vertical-left .ant-menu-item,
+    .ant-menu-vertical-right .ant-menu-item,
+    .ant-menu-inline .ant-menu-item,
+    .ant-menu-vertical .ant-menu-submenu-title,
+    .ant-menu-vertical-left .ant-menu-submenu-title,
+    .ant-menu-vertical-right .ant-menu-submenu-title,
+    .ant-menu-inline .ant-menu-submenu-title {
+        line-height: 48px;
+        height: 48px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .ant-menu-vertical>.ant-menu-item,
+    .ant-menu-vertical-left>.ant-menu-item,
+    .ant-menu-vertical-right>.ant-menu-item,
+    .ant-menu-inline>.ant-menu-item,
+    .ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title,
+    .ant-menu-vertical-left>.ant-menu-submenu>.ant-menu-submenu-title,
+    .ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title,
+    .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title {
+        line-height: 48px;
+        height: 48px;
+    }
+
+    .ant-menu-vertical .ant-menu-item:not(:last-child),
+    .ant-menu-vertical-left .ant-menu-item:not(:last-child),
+    .ant-menu-vertical-right .ant-menu-item:not(:last-child),
+    .ant-menu-inline .ant-menu-item:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    .ant-menu-submenu-popup {
+        .ant-menu.ant-menu-sub {
+            &>li:first-of-type[class~='ant-menu-item-selected'] {
+                border-radius: 4px 4px 0 0;
+            }
+
+            &>li:last-of-type[class~='ant-menu-item-selected'] {
+                border-radius: 0 0 4px 4px;
+            }
+        }
+    }
+
+    .ant-menu-submenu-selected {
+        font-weight: bold;
+    }
+
+    .ant-menu-item {
+        font-weight: normal;
+
+        &.ant-menu-item-selected {
+            font-weight: bold;
+        }
+    }
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(31, 33, 51, 0.2);
+}

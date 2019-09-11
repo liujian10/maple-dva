@@ -1,12 +1,13 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { Button, message } from 'antd'
-import PRODUCT, { namespace } from '../models/products/actions'
-import container from '../common/container'
-import ProductList from '../components/ProductList'
-import AntdFormModal from '../components/AntdFormModal'
-import NoformModal from '../components/NoformModal'
-import styles from './Products.styl'
+import PRODUCT, { namespace } from '@/models/products/actions'
+import container from '@/common/container'
+import ProductList from '@/components/ProductList'
+import AntdFormModal from '@/components/AntdFormModal'
+import NoformModal from '@/components/NoformModal'
+
+import styles from './products.styl'
 
 @container(
     false,

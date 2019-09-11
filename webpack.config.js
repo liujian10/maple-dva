@@ -20,7 +20,7 @@ module.exports = (webpackConfig, env) => {
 
     webpackConfig.module.rules.unshift({
         test: /\.styl$/,
-        loaders: ['style-loader', 'css-loader?modules=true&localIdentName=[path][name]__[local]--[hash:base64:4]', 'stylus-loader'],
+        loaders: ['style-loader', 'css-loader?modules=true&localIdentName=[name]__[local]--[hash:base64:4]', 'stylus-loader'],
         exclude: {
             or: [/node_modules/, /global/]
         }

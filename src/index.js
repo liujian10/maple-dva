@@ -2,7 +2,7 @@ import dva from 'dva'
 import createLoading from 'dva-loading'
 import createHistory from 'history/createHashHistory'
 import { requireAll } from './common/util'
-import './styles/global/cms-antd-theme.less'
+import './styles/global/index.less'
 
 const models = requireAll(require.context('./models', true, /model\.js$/))
 

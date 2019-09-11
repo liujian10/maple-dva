@@ -2,6 +2,11 @@ export const isDev = process.env.NODE_ENV !== 'production'
 
 export const isMock = isDev && true
 
+export const URLS = {
+    login: '/login',
+    logout: '/logout',
+}
+
 export const API_RULES = [
     [ // 测试、正式环境
         [/^growth/, path => `http://192.168.0.121:7392/dragnet-war/api/${path}`],

@@ -1,9 +1,11 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { Spin } from 'antd'
+import { hot } from 'react-hot-loader'
 import Container from '@/common/container'
-import router from '@/common/router'
 import ACTION, { namespace } from '@/models/app/actions'
+import { renderRoutes } from 'react-router-config'
+import { getAccessRoutes } from '@/common/routers'
 
 import styles from './View.styl'
 
@@ -16,14 +18,21 @@ class View extends React.Component {
             console.log('user res', res)
         }).catch(err => {
             console.error('user err', err)
+            this.props.history.push('/demo')
         })
     }
 
     render() {
-        const { app, $loading: { [ACTION.USER]: loading } } = this.props
+        const {
+            $loading: { [ACTION.USER]: loading },
+            user: { privilegeList },
+        } = this.props
+        const routes = getAccessRoutes(privilegeList)
         return (
             <div className={styles.view}>
-                {loading || loading === undefined ? <Spin /> : <router.Routes app={app} />}
+                {loading || loading === undefined
+                    ? <Spin />
+                    : renderRoutes(routes)}
             </div>
         )
     }
@@ -37,4 +46,4 @@ View.propTypes = {
     app: propTypes.object,
 }
 
-export default View
+export default hot(module)(View)

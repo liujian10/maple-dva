@@ -1,4 +1,5 @@
 const path = require('path')
+const themeConfig = require('./antd-theme.js')
 // const pxtorem = require('postcss-pxtorem')
 
 export default {
@@ -8,11 +9,12 @@ export default {
     //            propWhiteList: [],
     //        }),
     //    ],
-    env: {
-        development: {
-            extraBabelPlugins: [ "dva-hmr" ]
-        }
-    },
+    // env: {
+    //     development: {
+    //         extraBabelPlugins: ["dva-hmr"]
+    //     }
+    // },
+    theme: themeConfig,
     alias: {
         '@': path.resolve(__dirname, './src/'),
     },
