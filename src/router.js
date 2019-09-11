@@ -1,26 +1,11 @@
 import React from 'react'
-import propTypes from 'prop-types'
 import { routerRedux } from 'dva/router'
-import request from '@/common/request'
-import router from './common/router'
+import View from '@/containers/View'
 
 const { ConnectedRouter } = routerRedux
 
-function RouterConfig({ history, app }) {
-    console.log(app, history)
-    return (
-        <ConnectedRouter history={history}>
-            <router.Routes app={app} />
-        </ConnectedRouter>
-    )
-}
-
-RouterConfig.defaultProps = {
-    app: {},
-}
-
-RouterConfig.propTypes = {
-    app: propTypes.object,
-}
-
-export default RouterConfig
+export default ({ history, ...others }) => (
+    <ConnectedRouter history={history}>
+        <View {...others} />
+    </ConnectedRouter>
+)

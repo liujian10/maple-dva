@@ -5,10 +5,10 @@ function* base(action, { payload }, { put, call }) {
         // 调用 saveTodoToServer，成功后触发 `add` action 保存到 state
         const data = yield call(post, action.VAL, payload)
         yield put({ type: action.OK, payload: data })
-        return [data, null]
-    } catch (e) {
-        yield put({ type: action.NOK, message: e })
-        return [null, e]
+        return data
+    } catch (err) {
+        yield put({ type: action.NOK, message: err.message || err })
+        throw err
     }
 }
 
@@ -18,7 +18,12 @@ export const effectify = (v, handler = base, type = 'takeLatest') => {
     } else {
         v.effect = [
             function* (action, saga) {
-                return yield handler(v, action, saga)
+                try {
+                    const res = yield handler(v, action, saga)
+                    return Promise.resolve(res)
+                } catch (error) {
+                    return Promise.reject(error)
+                }
             }, { type },
         ]
     }

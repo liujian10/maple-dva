@@ -11,8 +11,8 @@ export default (formOpt, namespace, ...connectOpts) => {
     }
 
     const [
-        mapStateToProps = () => {},
-        mapDispatchToProps = () => {},
+        mapStateToProps = () => { },
+        mapDispatchToProps = () => { },
     ] = connectOpts || []
 
     const mapState = state => ({
@@ -21,19 +21,22 @@ export default (formOpt, namespace, ...connectOpts) => {
             ...state.loading,
             ...state.loading.models,
             ...state.loading.effects,
+            get(k) {
+                return this[`${k}`]
+            },
         },
         ...(typeof namespace === 'string' ? state[namespace] : {}),
         ...mapStateToProps(state),
     })
 
-    const dispatchHadnler = dispatch => (type, payload) => new Promise(resolve => {
+    const dispatchHadnler = dispatch => (type, payload) => {
         if (typeof type === 'object') {
             const { type: t, ...pd } = type
-            resolve(dispatch({ type: `${t}`, payload: pd }))
+            return dispatch({ type: `${t}`, payload: pd })
         } else {
-            resolve(dispatch({ type: `${type}`, payload }))
+            return dispatch({ type: `${type}`, payload })
         }
-    })
+    }
 
     const mapDispatch = dispatch => ({
         ...mapDispatchToProps(dispatchHadnler(dispatch)),

@@ -48,21 +48,16 @@ const request = (api, params = {}, headers = {}, method = 'POST') => {
         if (flag !== 1) {
             throw message
         } else {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(data)
-                }, 3000)
-            })
+            return data
         }
     }).catch(err => {
         if ((err === 401 || err === 'LOGOVERTIME') && !redirected) {
             redirected = true
             // @TODO 无访问权限操作
-        } else {
-            msg.error(`${err.message || err}`)
-            console.error(`👉${err.message || err}👈`)
-            throw err // !!!抛出异常，使 saga fail
         }
+        msg.error(`${err.message || err}`)
+        console.error(`request: 👉${err.message || err}👈`)
+        throw err // !!!抛出异常，使 saga fail
     })
 }
 

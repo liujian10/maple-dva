@@ -56,6 +56,8 @@ export const mapAction = (actionSet, prefix = []) => {
     })
 }
 
+export const reducerHandler = reducers => _.mapKeys(reducers, (v, k) => k.replace(/.+\//, ''))
+
 /**
  * 判断值是否为空[undefined|null|'']
  * @param {} value

@@ -1,3 +1,5 @@
+import { reducerHandler } from '@/common/util'
+
 import action from './actions'
 
 export const initState = {
@@ -5,7 +7,7 @@ export const initState = {
     types: [],
     submitLoading: false,
 }
-export default {
+export default reducerHandler({
     [action.LIST.OK](state, { payload: list }) {
         return {
             ...state,
@@ -18,13 +20,13 @@ export default {
             types,
         }
     },
-    [action.DELETE.KEY](state, { payload: { id } }) {
+    [action.DELETE](state, { payload: { id } }) {
         return {
             ...state,
             list: state.list.filter(item => item.id !== id),
         }
     },
-    [action.UPDATE.KEY](state, { payload }) {
+    [action.UPDATE](state, { payload }) {
         const { id: curId } = payload
         let newList = []
         if (curId) {
@@ -44,10 +46,10 @@ export default {
             submitLoading: false,
         }
     },
-    [action.SET_STATE.KEY](state, { payload }) {
+    [action.SET_STATE](state, { payload }) {
         return {
             ...state,
             ...payload,
         }
     },
-}
+})
