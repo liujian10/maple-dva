@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { Modal, Form, Input, Select, Switch } from 'antd'
-import { isEmpty } from '../common/util'
+import { isEmptyVal } from '../common/util'
 
 const { Item: FormItem } = Form
 const { Option: SelectOption } = Select
@@ -26,7 +26,7 @@ const AntdFormModal = ({
     hideModal,
     handleSubmit,
 }) => {
-    const isEditing = id && !isEmpty(id.value)
+    const isEditing = id && !isEmptyVal(id.value)
 
     const modalProps = {
         title: `${isEditing ? 'Edit' : 'Add'} Product`,

@@ -1,4 +1,6 @@
+const path = require('path')
 // const pxtorem = require('postcss-pxtorem')
+
 export default {
     //    extraPostCSSPlugins: [
     //        pxtorem({
@@ -6,10 +8,16 @@ export default {
     //            propWhiteList: [],
     //        }),
     //    ],
+    env: {
+        development: {
+            extraBabelPlugins: [ "dva-hmr" ]
+        }
+    },
+    alias: {
+        '@': path.resolve(__dirname, './src/'),
+    },
     extraBabelPlugins: [
         ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': 'css' }],
-    ],
-    extraBabelPlugins: [
         ['wrapper', {}],
     ],
     hash: true,

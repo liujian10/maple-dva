@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { Modal } from 'antd'
 import Form, { FormItem, FormCore } from 'noform'
 import { Input, Select, Switch, Button } from 'noform/lib/wrapper/antd'
-import { isEmpty } from '../common/util'
+import { isEmptyVal } from '../common/util'
 
 const { TextArea } = Input
 
@@ -66,7 +66,7 @@ export default class NoformModal extends React.Component {
             hideModal,
             handleSubmit,
         } = this.props
-        const isEditing = id && !isEmpty(id)
+        const isEditing = id && !isEmptyVal(id)
 
         const modalProps = {
             title: `${isEditing ? 'Edit' : 'Add'} Product`,
