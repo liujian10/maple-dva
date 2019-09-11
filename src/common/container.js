@@ -21,9 +21,6 @@ export default (formOpt, namespace, ...connectOpts) => {
             ...state.loading,
             ...state.loading.models,
             ...state.loading.effects,
-            get(k) {
-                return this[`${k}`]
-            },
         },
         ...(typeof namespace === 'string' ? state[namespace] : {}),
         ...mapStateToProps(state),

@@ -20,9 +20,7 @@ class View extends React.Component {
     }
 
     render() {
-        const { app, $loading } = this.props
-        const loading = $loading.get(ACTION.USER)
-        console.log(loading)
+        const { app, $loading: { [ACTION.USER]: loading } } = this.props
         return (
             <div className={styles.view}>
                 {loading || loading === undefined ? <Spin /> : <router.Routes app={app} />}

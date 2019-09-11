@@ -35,6 +35,7 @@ export default class Products extends React.Component {
     }
 
     componentDidMount() {
+        console.log('componentDidMount')
         this.props.dispatch(PRODUCT.TYPES)
         this.props.dispatch(PRODUCT.LIST).then(([res, e]) => {
             if (res) {
