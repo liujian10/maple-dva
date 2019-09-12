@@ -13,6 +13,9 @@ import { getAccessRoutes } from '@/common/routes'
 
 import style from './index.styl'
 
+const SIDE_UNFOLD_WIDTH = 180
+const SIDE_FOLD_WIDTH = 80
+
 const { Header, Content, Sider } = Layout
 
 const logout = () => {
@@ -41,12 +44,12 @@ class Main extends React.Component {
         const { dispatch, history } = this.props
         dispatch(ACTION.USER).then(({ userName }) => {
             console.log('user userName', userName)
-            if(!userName){
-                history.push('/login')
+            if (!userName) {
+                history.replace('/login')
             }
         }).catch(err => {
             console.error('user err', err)
-            history.push('/login')
+            history.replace('/login')
         })
     }
 
@@ -56,7 +59,7 @@ class Main extends React.Component {
 
     render() {
         const {
-            $loading: { [ACTION.USER] : loading },
+            $loading: { [ACTION.USER]: loading },
             route: { routes },
             user: { userName, nickname, privilegeList }
         } = this.props
@@ -64,7 +67,7 @@ class Main extends React.Component {
         const accessRoutes = getAccessRoutes(privilegeList, routes)
         const visibleRoutes = getVisibleRoutes(accessRoutes)
         const hasSider = hasChildInArr(visibleRoutes)
-        const marginLeft = hasSider ? (collapsed ? 80 : 180) : 0
+        const marginLeft = hasSider ? (collapsed ? SIDE_FOLD_WIDTH : SIDE_UNFOLD_WIDTH) : 0
         return loading ? <Spin /> : (
             <Layout>
                 <Header className={style.header}>
@@ -79,7 +82,7 @@ class Main extends React.Component {
                 <Content className={style.main}>
                     {hasSider && (
                         <Sider
-                            width={180}
+                            width={SIDE_UNFOLD_WIDTH}
                             className={style.aside}
                             collapsible={true}
                             collapsed={collapsed}
