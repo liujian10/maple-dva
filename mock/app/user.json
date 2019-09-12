@@ -6,13 +6,7 @@
         "nickname": "刘建",
         "privilegeList": [
             "BOARD",
-            "RD_WORK_BOARD",
-            "RD_DATA_BOARD",
-            "RD_DATA_OVERVIEW",
-            "RD_ALARM",
-            "RD_THROUGH_TRAIN",
-            "RD_DEMO",
-            "PROJECT_MANAGE"
+            "BOARD_PRODUCT"
         ],
         "roleList": [
             "RD_LEADER"

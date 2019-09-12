@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default props => (
-    <div>NoAuthority</div>
+    <div style={{ color: '#333' }}>NoAuthority</div>
 )

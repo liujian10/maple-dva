@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default props => (
-    <div>404</div>
+    <div style={{ color: '#333' }}>404</div>
 )

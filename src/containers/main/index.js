@@ -1,12 +1,15 @@
 import React from 'react'
 import { renderRoutes } from 'react-router-config'
 import PropTypes from 'prop-types'
-import { Layout } from 'antd'
+import { Layout, Spin } from 'antd'
 import { URLS } from '@/common/config'
+import { hasChildInArr } from '@/common/util'
 import logo from '@/images/app/logo.svg'
 import Menu from '@/components/common/menu'
 import container from '@/common/container'
-import { namespace } from '@/models/app/actions'
+import NoAuthority from '@/containers/NoAuthority'
+import ACTION, { namespace } from '@/models/app/actions'
+import { getAccessRoutes } from '@/common/routes'
 
 import style from './index.styl'
 
@@ -34,15 +37,35 @@ class Main extends React.Component {
 
     state = { collapsed: false }
 
+    componentDidMount() {
+        const { dispatch, history } = this.props
+        dispatch(ACTION.USER).then(({ userName }) => {
+            console.log('user userName', userName)
+            if(!userName){
+                history.push('/login')
+            }
+        }).catch(err => {
+            console.error('user err', err)
+            history.push('/login')
+        })
+    }
+
     onCollapse = collapsed => {
         this.setState({ collapsed })
     }
 
     render() {
-        const { route: { routes }, user: { userName, nickname } } = this.props
+        const {
+            $loading: { [ACTION.USER] : loading },
+            route: { routes },
+            user: { userName, nickname, privilegeList }
+        } = this.props
         const { collapsed } = this.state
-        const visibleRoutes = getVisibleRoutes(routes)
-        return (
+        const accessRoutes = getAccessRoutes(privilegeList, routes)
+        const visibleRoutes = getVisibleRoutes(accessRoutes)
+        const hasSider = hasChildInArr(visibleRoutes)
+        const marginLeft = hasSider ? (collapsed ? 80 : 180) : 0
+        return loading ? <Spin /> : (
             <Layout>
                 <Header className={style.header}>
                     <img src={logo} alt="狮平台" />
@@ -54,7 +77,7 @@ class Main extends React.Component {
                     )}
                 </Header>
                 <Content className={style.main}>
-                    {Array.isArray(visibleRoutes) && visibleRoutes.length > 0 && (
+                    {hasSider && (
                         <Sider
                             width={180}
                             className={style.aside}
@@ -65,8 +88,8 @@ class Main extends React.Component {
                             <Menu menus={visibleRoutes} />
                         </Sider>
                     )}
-                    <div className={style.content} style={{ marginLeft: collapsed ? 80 : 180 }}>
-                        {renderRoutes(routes)}
+                    <div className={style.content} style={{ marginLeft }}>
+                        {hasSider ? renderRoutes(accessRoutes) : <NoAuthority />}
                     </div>
                 </Content>
             </Layout>

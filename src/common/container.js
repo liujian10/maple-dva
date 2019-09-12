@@ -16,7 +16,6 @@ export default (formOpt, namespace, ...connectOpts) => {
     ] = connectOpts || []
 
     const mapState = state => {
-        console.log('state:', state)
         return ({
             $app: state.app,
             $loading: {
