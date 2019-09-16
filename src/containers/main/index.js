@@ -18,10 +18,6 @@ const SIDE_FOLD_WIDTH = 80
 
 const { Header, Content, Sider } = Layout
 
-const logout = () => {
-    window.location = `${URLS.logout}?pageUrl=${window.location.href}`
-}
-
 const getVisibleRoutes = routes => (Array.isArray(routes) && routes.length > 0 ? routes
     .filter(({ meta: { visible = true } = {} }) => !!visible)
     .map(route => {
@@ -41,20 +37,24 @@ class Main extends React.Component {
     state = { collapsed: false }
 
     componentDidMount() {
-        const { dispatch, history } = this.props
+        const { dispatch } = this.props
         dispatch(ACTION.USER).then(({ userName }) => {
             console.log('user userName', userName)
             if (!userName) {
-                history.replace('/login')
+                this.gotoLogin()
             }
         }).catch(err => {
             console.error('user err', err)
-            history.replace('/login')
+            this.gotoLogin()
         })
     }
 
     onCollapse = collapsed => {
         this.setState({ collapsed })
+    }
+
+    gotoLogin = () => {
+        this.props.history.replace(URLS.login)
     }
 
     render() {
@@ -75,7 +75,7 @@ class Main extends React.Component {
                     {!!userName && (
                         <React.Fragment>
                             <div style={{ flex: 1, textAlign: 'right' }}>欢迎回来，{nickname || userName}！</div>
-                            <div className={style.btn_logout} onClick={logout}>退出</div>
+                            <div className={style.btn_logout} onClick={this.gotoLogin}>退出</div>
                         </React.Fragment>
                     )}
                 </Header>
