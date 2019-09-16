@@ -11,6 +11,18 @@ export default reducerHandler({
             user,
         }
     },
+    [action.LOGIN.OK](state, { payload: user }) {
+        return {
+            ...state,
+            user,
+        }
+    },
+    [action.LOGOUT.OK](state) {
+        return {
+            ...state,
+            user: {},
+        }
+    },
     [action.SET_STATE](state, { payload }) {
         return {
             ...state,

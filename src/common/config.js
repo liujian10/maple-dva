@@ -5,6 +5,7 @@ export const isMock = isDev && true
 export const URLS = {
     login: '/login',
     logout: '/logout',
+    home: '/main',
 }
 
 export const API_RULES = [

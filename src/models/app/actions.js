@@ -4,6 +4,8 @@ export const namespace = 'app'
 
 const actions = {
     USER: 'app/user',
+    LOGIN: 'app/login',
+    LOGOUT: 'app/logout',
     SET_STATE: false,
 }
 
