@@ -19,7 +19,7 @@
 ### Installation
 
 ```bash
-$ git clone http://172.16.117.224/liujian02/maple-dva.git
+$ git clone https://github.com/mapleliu/maple-dva.git
 $ yarn
 $ yarn start
 ```
