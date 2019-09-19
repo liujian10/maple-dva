@@ -38,15 +38,12 @@ export default class NoformModal extends React.Component {
         handleSubmit: () => {},
     }
 
-    constructor(props, context) {
-        super(props, context)
-        this.core = new FormCore({
-            validateConfig,
-            autoValidate: true,
-        })
-    }
-
     state={}
+
+    core = new FormCore({
+        validateConfig,
+        autoValidate: true,
+    })
 
     UNSAFE_componentWillReceiveProps(nextProps, nextState) {
         const { fields: curFields } = this.props

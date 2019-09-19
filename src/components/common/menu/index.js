@@ -28,58 +28,53 @@ const getKeysByHash = () => {
     }, [])
 }
 
-export default class Main extends React.Component {
-    static propTypes = {
-        menus: PropTypes.array.isRequired,
-    }
-
-    constructor(props) {
-        super(props)
-        this.state = {};
-        [, ...this.defaultOpenKeys] = getKeysByHash().reverse()
-    }
-
-    renderMenuItem = menu => (Array.isArray(menu.routes) && menu.routes.length > 0 ? (
-        <SubMenu
-            key={menu.path}
-            title={(
-                <span className={style.menu}>
-                    {getIconSrcByMenu(menu)}
-                    <span>{menu.name}</span>
-                </span>
-            )}
-        >
-            {menu.routes.map(item => this.renderMenuItem(item))}
-        </SubMenu>
-    ) : (
-        <Item
-            className={style.menu}
-            key={menu.path}
-        >
-            <NavLink
-                title={menu.name}
-                to={menu.path}
-                exact={!!menu.exact}
-            >
+const renderMenuItem = menu => (Array.isArray(menu.routes) && menu.routes.length > 0 ? (
+    <SubMenu
+        key={menu.path}
+        title={(
+            <span className={style.menu}>
                 {getIconSrcByMenu(menu)}
                 <span>{menu.name}</span>
-            </NavLink>
-        </Item>
-    ))
+            </span>
+        )}
+    >
+        {menu.routes.map(item => renderMenuItem(item))}
+    </SubMenu>
+) : (
+    <Item
+        className={style.menu}
+        key={menu.path}
+    >
+        <NavLink
+            title={menu.name}
+            to={menu.path}
+            exact={!!menu.exact}
+        >
+            {getIconSrcByMenu(menu)}
+            <span>{menu.name}</span>
+        </NavLink>
+    </Item>
+))
 
-    render() {
-        const { menus } = this.props
-        const selectedKeys = getKeysByHash()
-        return (
-            <Menu
-                theme="dark"
-                mode="inline"
-                className={style.main}
-                selectedKeys={selectedKeys}
-                defaultOpenKeys={this.defaultOpenKeys}
-            >
-                {menus.map(menu => this.renderMenuItem(menu))}
-            </Menu>
-        )
-    }
+const Cmp = ({ menus }) => {
+    const selectedKeys = getKeysByHash()
+    const defaultOpenKeys = [...selectedKeys].reverse().splice(1)
+
+    return (
+        <Menu
+            theme="dark"
+            mode="inline"
+            className={style.main}
+            selectedKeys={selectedKeys}
+            defaultOpenKeys={defaultOpenKeys}
+        >
+            {menus.map(menu => renderMenuItem(menu))}
+        </Menu>
+    )
 }
+
+Cmp.propTypes = {
+    menus: PropTypes.array.isRequired,
+}
+
+export default Cmp

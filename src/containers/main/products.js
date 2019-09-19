@@ -133,7 +133,7 @@ export default class Products extends React.Component {
                 <h2>List of Products</h2>
                 <div className={styles.tool}>
                     <Button icon="plus" onClick={() => this.showEditModal('no-form')}>Noform</Button>
-                    <Button icon="plus" onClick={() => this.showEditModal('antd')} style={{ marginLeft: 10 }}>Antd Form</Button>
+                    <Button icon="plus" onClick={() => this.showEditModal('antd')} style={{ marginLeft: 10 }}>Antd</Button>
                 </div>
                 <ProductList {...listProps} />
                 <AntdFormModal {...antdModalProps} />

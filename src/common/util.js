@@ -1,5 +1,26 @@
+import { useState as us } from 'react'
 import _ from 'lodash'
 import { isMock, API_RULES } from './config'
+
+/**
+ * 优化state hook使用逻辑
+ * @param {*} obj 
+ */
+export const useState = obj => {
+    const { values, sets } = Object.entries(obj).reduce((res, [k, v]) => {
+        const [value, set] = us(v)
+        res.values[k] = value
+        res.sets[k] = set
+        return res
+    }, { values: {}, sets: {} })
+
+    return {
+        ...values,
+        setState: states => Object.entries(states).forEach(([k, v]) => {
+            sets[k] && sets[k](v)
+        })
+    }
+}
 
 /**
  * 动态引入文件夹下多个文件
@@ -44,7 +65,7 @@ export const mapAction = (actionSet, prefix = []) => {
         if (typeof v === 'object') {
             mapAction(v, action)
         } else {
-            const fn = () => {}
+            const fn = () => { }
             fn.toString = () => action.join('/')
             fn.KEY = k
             fn.VAL = v
