@@ -19,6 +19,11 @@
       "stylint"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@hot-loader/react-dom": "^16.9.0",
     "dva": "^2.4.0",
@@ -57,10 +62,5 @@
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "yaml-loader": "^0.5.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
