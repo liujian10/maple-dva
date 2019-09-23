@@ -4,8 +4,8 @@ import { Redirect } from 'dva/router'
 import { requireAll } from '@/common/util'
 
 // page
-import NotFound from '@/containers/NotFound'
-import NoAuthority from '@/containers/NoAuthority'
+import NotFound from '@/components/common/NotFound'
+import NoAuthority from '@/components/common/NoAuthority'
 // import Developing from '@/components/common/developing' // 开发中页面
 
 const ROUTE_CONFIG = [
@@ -17,17 +17,25 @@ const ROUTE_CONFIG = [
                 name: '首页',
                 meta: {
                     icon: 'board',
-                    access: 'BOARD',
+                    access: 'MAIN_HOME',
                 },
             },
             {
                 path: '/products',
                 name: '工作',
                 meta: {
-                    icon: 'board',
-                    access: 'BOARD_PRODUCT',
+                    icon: 'overview',
+                    access: 'MAIN_PRODUCT',
                 },
             },
+            {
+                path: '/demo',
+                name: 'Demo',
+                meta: {
+                    icon: 'shortcut',
+                    access: 'MAIN_DEMO',
+                },
+            },  
         ],
     },
     {

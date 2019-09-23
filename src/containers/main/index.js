@@ -7,7 +7,7 @@ import { hasChildInArr } from '@/common/util'
 import logo from '@/images/app/logo.svg'
 import Menu from '@/components/common/menu'
 import container from '@/common/container'
-import NoAuthority from '@/containers/NoAuthority'
+import NoAuthority from '@/components/common/NoAuthority'
 import ACTION, { namespace } from '@/models/app/actions'
 import { getAccessRoutes } from '@/common/routes'
 

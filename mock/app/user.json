@@ -5,8 +5,9 @@
         "userName": "liujian02",
         "nickname": "刘建",
         "privilegeList": [
-            "BOARD",
-            "BOARD_PRODUCT"
+            "MAIN_HOME",
+            "MAIN_PRODUCT",
+            "MAIN_DEMO"
         ],
         "roleList": [
             "RD_LEADER"

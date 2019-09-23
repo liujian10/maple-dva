@@ -1,6 +1,6 @@
 import React from 'react'
 import QueueAnim from 'rc-queue-anim'
-import styles from './Demo.styl'
+import styles from './demo.styl'
 
 const ANIM_SWITCH = {
     // rotate: [0, 270],

@@ -9,7 +9,8 @@ export default props => (
         <div className={styles.welcome} />
         <ul className={styles.list}>
             <li className={styles['list-item']}><Link to="products">Products</Link></li>
-            <li className={styles['list-item']}><Link to="route">Route</Link></li>
+            <li className={styles['list-item']}><Link to="/404">404</Link></li>
+            <li className={styles['list-item']}><Link to="/no-authority">no-authority</Link></li>
             <li className={styles['list-item']}><Link to="demo">Demo</Link></li>
         </ul>
     </div>
