@@ -17,6 +17,7 @@ export default {
     theme: themeConfig,
     alias: {
         '@': path.resolve(__dirname, './src/'),
+        'react-dom': '@hot-loader/react-dom',
     },
     extraBabelPlugins: [
         ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': 'css' }],
