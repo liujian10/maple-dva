@@ -7,26 +7,27 @@ export const initState = {
     types: [],
     submitLoading: false,
 }
+
 export default reducerHandler({
-    [action.LIST.OK](state, { payload: list }) {
+    [action.LIST.OK]: (state, { payload: list }) => {
         return {
             ...state,
             list,
         }
     },
-    [action.TYPES.OK](state, { payload: types }) {
+    [action.TYPES.OK]: (state, { payload: types }) => {
         return {
             ...state,
             types,
         }
     },
-    [action.DELETE](state, { payload: { id } }) {
+    [action.DELETE]: (state, { payload: { id } }) => {
         return {
             ...state,
             list: state.list.filter(item => item.id !== id),
         }
     },
-    [action.UPDATE](state, { payload }) {
+    [action.UPDATE]: (state, { payload }) => {
         const { id: curId } = payload
         let newList = []
         if (curId) {
@@ -46,7 +47,7 @@ export default reducerHandler({
             submitLoading: false,
         }
     },
-    [action.SET_STATE](state, { payload }) {
+    [action.SET_STATE]: (state, { payload }) => {
         return {
             ...state,
             ...payload,

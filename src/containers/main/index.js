@@ -1,7 +1,7 @@
 import React from 'react'
 import { renderRoutes } from 'react-router-config'
 import PropTypes from 'prop-types'
-import { Layout, Spin } from 'antd'
+import { Layout, Spin, message } from 'antd'
 import { URLS } from '@/common/config'
 import { hasChildInArr } from '@/common/util'
 import logo from '@/images/app/logo.svg'
@@ -40,12 +40,11 @@ class Main extends React.Component {
     componentDidMount() {
         const { dispatch } = this.props
         dispatch(ACTION.USER).then(({ userName }) => {
-            console.log('user userName', userName)
             if (!userName) {
                 this.gotoLogin()
             }
         }).catch(err => {
-            console.error('user err', err)
+            message.error(err)
             this.gotoLogin()
         })
     }

@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { isMock, API_RULES } from './config'
 
 /**
- * 优化state hook使用逻辑
+ * 封装state hook使用逻辑
  * @param {*} obj 
  */
 export const useState = obj => {

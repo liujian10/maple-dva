@@ -5,25 +5,25 @@ export const initState = {
     user: {},
 }
 export default reducerHandler({
-    [action.USER.OK](state, { payload: user }) {
+    [action.USER.OK]: (state, { payload: user }) => {
         return {
             ...state,
             user,
         }
     },
-    [action.LOGIN.OK](state, { payload: user }) {
+    [action.LOGIN.OK]: (state, { payload: user }) => {
         return {
             ...state,
             user,
         }
     },
-    [action.LOGOUT.OK](state) {
+    [action.LOGOUT.OK]: state => {
         return {
             ...state,
             user: {},
         }
     },
-    [action.SET_STATE](state, { payload }) {
+    [action.SET_STATE]: (state, { payload }) => {
         return {
             ...state,
             ...payload,
