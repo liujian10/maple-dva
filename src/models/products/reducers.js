@@ -9,24 +9,18 @@ export const initState = {
 }
 
 export default reducerHandler({
-    [action.LIST.OK]: (state, { payload: list }) => {
-        return {
-            ...state,
-            list,
-        }
-    },
-    [action.TYPES.OK]: (state, { payload: types }) => {
-        return {
-            ...state,
-            types,
-        }
-    },
-    [action.DELETE]: (state, { payload: { id } }) => {
-        return {
-            ...state,
-            list: state.list.filter(item => item.id !== id),
-        }
-    },
+    [action.LIST.OK]: (state, { payload: list }) => ({
+        ...state,
+        list,
+    }),
+    [action.TYPES.OK]: (state, { payload: types }) => ({
+        ...state,
+        types,
+    }),
+    [action.DELETE]: (state, { payload: { id } }) => ({
+        ...state,
+        list: state.list.filter(item => item.id !== id),
+    }),
     [action.UPDATE]: (state, { payload }) => {
         const { id: curId } = payload
         let newList = []
@@ -47,10 +41,8 @@ export default reducerHandler({
             submitLoading: false,
         }
     },
-    [action.SET_STATE]: (state, { payload }) => {
-        return {
-            ...state,
-            ...payload,
-        }
-    },
+    [action.SET_STATE]: (state, { payload }) => ({
+        ...state,
+        ...payload,
+    }),
 })

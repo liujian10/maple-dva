@@ -1,5 +1,5 @@
 import { message as msg } from 'antd'
-import { path2url } from '../common/util'
+import { path2url } from './util'
 
 const CONTENT_TYPE = {
     form: 'application/x-www-form-urlencoded',

@@ -4377,12 +4377,23 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@4.0.1:
-  version "4.0.1"
-  resolved "http://172.16.116.19:7001/eslint-config-react-app/download/eslint-config-react-app-4.0.1.tgz#23fd0fd7ea89442ef1e733f66a7207674b23c8db"
-  integrity sha1-I/0P1+qJRC7x5zP2anIHZ0sjyNs=
+eslint-config-airbnb-base@^14.0.0:
+  version "14.0.0"
+  resolved "http://172.16.116.19:7001/eslint-config-airbnb-base/download/eslint-config-airbnb-base-14.0.0.tgz#8a7bcb9643d13c55df4dd7444f138bf4efa61e17"
+  integrity sha1-invLlkPRPFXfTddETxOL9O+mHhc=
   dependencies:
     confusing-browser-globals "^1.0.7"
+    object.assign "^4.1.0"
+    object.entries "^1.1.0"
+
+eslint-config-airbnb@^18.0.1:
+  version "18.0.1"
+  resolved "http://172.16.116.19:7001/eslint-config-airbnb/download/eslint-config-airbnb-18.0.1.tgz#a3a74cc29b46413b6096965025381df8fb908559"
+  integrity sha1-o6dMwptGQTtglpZQJTgd+PuQhVk=
+  dependencies:
+    eslint-config-airbnb-base "^14.0.0"
+    object.assign "^4.1.0"
+    object.entries "^1.1.0"
 
 eslint-config-react-app@^2.0.0:
   version "2.1.0"
@@ -4395,13 +4406,6 @@ eslint-config-umi@^0.1.4:
   integrity sha1-LCCgMcH445FgnRcuiPnGDM64hhY=
   dependencies:
     eslint-config-react-app "^2.0.0"
-
-eslint-config-umi@^1.5.0:
-  version "1.5.0"
-  resolved "http://172.16.116.19:7001/eslint-config-umi/download/eslint-config-umi-1.5.0.tgz#c2d7efbb8f5a035edb60ab0edc099efda0d11283"
-  integrity sha1-wtfvu49aA17bYKsO3Ame/aDREoM=
-  dependencies:
-    eslint-config-react-app "4.0.1"
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"

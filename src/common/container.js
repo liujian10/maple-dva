@@ -1,7 +1,8 @@
 import { Form } from 'antd'
 import { connect } from 'dva'
 import { withRouter } from 'dva/router'
-import { compose } from '../common/util'
+
+import { compose } from './util'
 
 export default (formOpt, namespace, ...connectOpts) => {
     const chain = [withRouter]
@@ -15,26 +16,23 @@ export default (formOpt, namespace, ...connectOpts) => {
         mapDispatchToProps = () => { },
     ] = connectOpts || []
 
-    const mapState = state => {
-        return ({
-            $app: state.app,
-            $loading: {
-                ...state.loading,
-                ...state.loading.models,
-                ...state.loading.effects,
-            },
-            ...(typeof namespace === 'string' ? state[namespace] : {}),
-            ...mapStateToProps(state),
-        })
-    }
+    const mapState = state => ({
+        $app: state.app,
+        $loading: {
+            ...state.loading,
+            ...state.loading.models,
+            ...state.loading.effects,
+        },
+        ...(typeof namespace === 'string' ? state[namespace] : {}),
+        ...mapStateToProps(state),
+    })
 
     const dispatchHadnler = dispatch => (type, payload) => {
         if (typeof type === 'object') {
             const { type: t, ...pd } = type
             return dispatch({ type: `${t}`, payload: pd })
-        } else {
-            return dispatch({ type: `${type}`, payload })
         }
+        return dispatch({ type: `${type}`, payload })
     }
 
     const mapDispatch = dispatch => ({
@@ -46,4 +44,3 @@ export default (formOpt, namespace, ...connectOpts) => {
 
     return compose(...chain)
 }
-

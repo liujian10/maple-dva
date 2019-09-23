@@ -1,6 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { Modal, Form, Input, Select, Switch } from 'antd'
+import {
+    Modal, Form, Input, Select, Switch,
+} from 'antd'
 import { isEmptyVal } from '../common/util'
 
 const { Item: FormItem } = Form
@@ -51,7 +53,7 @@ const AntdFormModal = ({
     return (
         <Modal {...modalProps}>
             <Form>
-                <FormItem {...formItemLayout} label="Name" >
+                <FormItem {...formItemLayout} label="Name">
                     {getFieldDecorator(FORM_ITEM_NAME, {
                         rules: [
                             { required: true },
@@ -59,18 +61,18 @@ const AntdFormModal = ({
                         ],
                     })(<Input placeholder="Please input name" />)}
                 </FormItem>
-                <FormItem {...formItemLayout} label="Type" >
+                <FormItem {...formItemLayout} label="Type">
                     {getFieldDecorator(FORM_ITEM_TYPE, {
                         rules: [{ required: true }],
                     })(<Select placeholder="Please select type">{selectOptions}</Select>)}
                 </FormItem>
-                <FormItem {...formItemLayout} label="Enable" >
+                <FormItem {...formItemLayout} label="Enable">
                     {getFieldDecorator(FORM_ITEM_ENABLE, {
                         valuePropName: 'checked',
                         rules: [{ required: true }],
                     })(<Switch checkedChildren="Yes" unCheckedChildren="No" />)}
                 </FormItem>
-                <FormItem {...formItemLayout} label="Description" >
+                <FormItem {...formItemLayout} label="Description">
                     {getFieldDecorator(FORM_ITEM_DESC, {
                         rules: [
                             { required: true },
@@ -118,4 +120,3 @@ export default Form.create({
     },
     onValuesChange() {},
 })(AntdFormModal)
-

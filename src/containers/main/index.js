@@ -54,29 +54,34 @@ class Main extends React.Component {
     }
 
     gotoLogin = () => {
-        this.props.history.replace(URLS.login)
+        const { history } = this.props
+        history.replace(URLS.login)
     }
 
     render() {
         const {
             $loading: { [ACTION.USER]: loading },
             route: { routes },
-            user: { userName, nickname, privilegeList }
+            user: { userName, nickname, privilegeList },
         } = this.props
         const { collapsed } = this.state
         const accessRoutes = getAccessRoutes(privilegeList, routes)
         const visibleRoutes = getVisibleRoutes(accessRoutes)
         const hasSider = hasChildInArr(visibleRoutes)
-        const marginLeft = hasSider ? (collapsed ? SIDE_FOLD_WIDTH : SIDE_UNFOLD_WIDTH) : 0
+        const marginLeft = (hasSider && (collapsed ? SIDE_FOLD_WIDTH : SIDE_UNFOLD_WIDTH)) || 0
         return loading ? <Spin /> : (
             <Layout>
                 <Header className={style.header}>
                     <img src={logo} alt="狮平台" />
                     {!!userName && (
-                        <React.Fragment>
-                            <div style={{ flex: 1, textAlign: 'right' }}>欢迎回来，{nickname || userName}！</div>
+                        <>
+                            <div style={{ flex: 1, textAlign: 'right' }}>
+                                欢迎回来，
+                                {nickname || userName}
+                                ！
+                            </div>
                             <div className={style.btn_logout} onClick={this.gotoLogin}>退出</div>
-                        </React.Fragment>
+                        </>
                     )}
                 </Header>
                 <Content className={style.main}>

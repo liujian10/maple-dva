@@ -86,7 +86,7 @@ export default class Demo extends React.Component {
                 </div>
                 <QueueAnim {...toolAnimProps}>
                     {showTool && [
-                        <div key="tool" className={styles.tool} >
+                        <div key="tool" className={styles.tool}>
                             <span onClick={this.handleClickHideTool}>《</span>
                             标
                         </div>,

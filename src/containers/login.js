@@ -1,5 +1,7 @@
 import React from 'react'
-import { Card, Icon, Input, Button, Form } from 'antd'
+import {
+    Card, Icon, Input, Button, Form,
+} from 'antd'
 import container from '@/common/container'
 import { URLS } from '@/common/config'
 import ACTION, { namespace } from '@/models/app/actions'
@@ -33,7 +35,9 @@ class Login extends React.Component {
             <Card hoverable={true} style={{ borderRadius: 4, border: 'none' }}>
                 <div className={styles.main}>
                     <div className={styles.logo}>
-                        <Icon type="coffee" /> Demo
+                        <Icon type="coffee" />
+                        {' '}
+Demo
                     </div>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Item>

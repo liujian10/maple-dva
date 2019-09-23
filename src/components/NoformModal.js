@@ -2,7 +2,9 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { Modal } from 'antd'
 import Form, { FormItem, FormCore } from 'noform'
-import { Input, Select, Switch, Button } from 'noform/lib/wrapper/antd'
+import {
+    Input, Select, Switch, Button,
+} from 'noform/lib/wrapper/antd'
 import { isEmptyVal } from '../common/util'
 
 const { TextArea } = Input
@@ -29,6 +31,7 @@ export default class NoformModal extends React.Component {
         onChange: propTypes.func,
         handleSubmit: propTypes.func,
     }
+
     static defaultProps = {
         visible: false,
         fields: {},
@@ -89,23 +92,23 @@ export default class NoformModal extends React.Component {
         return (
             <Modal {...modalProps}>
                 <Form core={this.core} layout={{ label: 6, control: 16 }}>
-                    <FormItem name={FORM_ITEM_NAME} label="Name" >
+                    <FormItem name={FORM_ITEM_NAME} label="Name">
                         <Input placeholder="Please input name" />
                     </FormItem>
-                    <FormItem name={FORM_ITEM_TYPE} label="Type" >
+                    <FormItem name={FORM_ITEM_TYPE} label="Type">
                         <Select placeholder="Please select type" options={selectOptions} />
                     </FormItem>
-                    <FormItem name={FORM_ITEM_ENABLE} label="Enable" >
+                    <FormItem name={FORM_ITEM_ENABLE} label="Enable">
                         <Switch checkedChildren="Yes" unCheckedChildren="No" />
                     </FormItem>
-                    <FormItem name={FORM_ITEM_DESC} label="Description" >
+                    <FormItem name={FORM_ITEM_DESC} label="Description">
                         <TextArea rows={3} placeholder="Please input description" />
                     </FormItem>
                     <FormItem name={FORM_ITEM_ID} style={{ display: 'none' }}>
                         <Input />
                     </FormItem>
                     <FormItem label="Global status">
-                        <div >
+                        <div>
                             <Button style={{ marginRight: 12 }} onClick={this.setStatus.bind(this, 'edit')}>Edit</Button>
                             <Button style={{ marginRight: 12 }} onClick={this.setStatus.bind(this, 'preview')}>Preview</Button>
                             <Button style={{ marginRight: 12 }} onClick={this.setStatus.bind(this, 'disabled')}>Disabled</Button>

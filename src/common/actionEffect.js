@@ -17,7 +17,7 @@ export const effectify = (v, handler = base, type = 'takeLatest') => {
         console.log(`${v.type}'s effect already registered!`)
     } else {
         v.effect = [
-            function* (action, saga) {
+            function* fn(action, saga) {
                 try {
                     const res = yield handler(v, action, saga)
                     return Promise.resolve(res)

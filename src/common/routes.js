@@ -35,7 +35,7 @@ const ROUTE_CONFIG = [
                     icon: 'shortcut',
                     access: 'MAIN_DEMO',
                 },
-            },  
+            },
         ],
     },
     {
@@ -96,16 +96,14 @@ const getComponent = ({ path = '/', component, routes: subs }) => {
 const hasAccess = (accessList, access) => access === '*'
     || accessList.filter(ac => (Array.isArray(access) ? access : [access]).includes(ac)).length > 0
 
-export const getAccessRoutes = (accessList = [], routeList = []) =>
-    routeList
-        .filter(({ meta: { access = '*' } = {} }) => hasAccess(accessList, access))
-        .map(route => ({
-            ...route,
-            routes: getAccessRoutes(accessList, route.routes),
-        }))
+export const getAccessRoutes = (accessList = [], routeList = []) => routeList
+    .filter(({ meta: { access = '*' } = {} }) => hasAccess(accessList, access))
+    .map(route => ({
+        ...route,
+        routes: getAccessRoutes(accessList, route.routes),
+    }))
 
-export const getRoutes = (routeList = ROUTE_CONFIG, parentPath = '') =>
-    routeList
+export const getRoutes = (routeList = ROUTE_CONFIG, parentPath = '') => routeList
     .map(route => {
         const { meta: { redirectToChild = true } = {} } = route
         const path = `${parentPath}${route.path || ''}`

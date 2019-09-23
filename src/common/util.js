@@ -4,7 +4,7 @@ import { isMock, API_RULES } from './config'
 
 /**
  * 封装state hook使用逻辑
- * @param {*} obj 
+ * @param {*} obj
  */
 export const useState = obj => {
     const { values, sets } = Object.entries(obj).reduce((res, [k, v]) => {
@@ -17,8 +17,10 @@ export const useState = obj => {
     return {
         ...values,
         setState: states => Object.entries(states).forEach(([k, v]) => {
-            sets[k] && sets[k](v)
-        })
+            if (sets[k]) {
+                sets[k](v)
+            }
+        }),
     }
 }
 
