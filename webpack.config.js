@@ -1,8 +1,6 @@
 const path = require('path');
-const esConfig = require('eslint-config-umi')
 
 module.exports = (webpackConfig, env) => {
-    console.log(JSON.stringify(esConfig))
     webpackConfig.module.rules.forEach(rule => {
         const { loader = '', test } = rule
         if (loader.indexOf('url-loader') !== -1) {

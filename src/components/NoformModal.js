@@ -5,6 +5,7 @@ import Form, { FormItem, FormCore } from 'noform'
 import {
     Input, Select, Switch, Button,
 } from 'noform/lib/wrapper/antd'
+
 import { isEmptyVal } from '../common/util'
 
 const { TextArea } = Input

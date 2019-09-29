@@ -11,7 +11,6 @@ import NoAuthority from '@/components/common/NoAuthority'
 import ACTION, { namespace } from '@/models/app/actions'
 import { getAccessRoutes } from '@/common/routes'
 
-import 'noform/dist/index.css'
 import style from './index.styl'
 
 const SIDE_UNFOLD_WIDTH = 180

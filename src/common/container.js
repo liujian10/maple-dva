@@ -27,7 +27,7 @@ export default (formOpt, namespace, ...connectOpts) => {
         ...mapStateToProps(state),
     })
 
-    const dispatchHadnler = dispatch => (type, payload) => {
+    const dispatchHandler = dispatch => (type, payload) => {
         if (typeof type === 'object') {
             const { type: t, ...pd } = type
             return dispatch({ type: `${t}`, payload: pd })
@@ -36,8 +36,8 @@ export default (formOpt, namespace, ...connectOpts) => {
     }
 
     const mapDispatch = dispatch => ({
-        ...mapDispatchToProps(dispatchHadnler(dispatch)),
-        dispatch: dispatchHadnler(dispatch),
+        ...mapDispatchToProps(dispatchHandler(dispatch)),
+        dispatch: dispatchHandler(dispatch),
     })
 
     chain.push(connect(mapState, mapDispatch))

@@ -9,10 +9,7 @@ import NoformModal from '@/components/NoformModal'
 
 import styles from './products.styl'
 
-@container(
-    false,
-    namespace,
-)
+@container(false, namespace)
 export default class Products extends React.Component {
     static propTypes = {
         list: propTypes.array,
@@ -55,18 +52,17 @@ export default class Products extends React.Component {
             submitLoading: true,
         })
         setTimeout(() => {
-            this.props.dispatch(PRODUCT.UPDATE, values).then(() => {
-                this.hideEditModal()
-                message.success('保存成功！')
-                callback()
-            })
+            this.props.dispatch(PRODUCT.UPDATE, values)
+            this.hideEditModal()
+            message.success('保存成功！')
+            callback()
         }, 1000)
     }
 
     showEditModal = (type, item = {}) => {
         const newState = {}
         if (type === 'antd') {
-            const antdFormItem = { }
+            const antdFormItem = {}
             Object.entries(item).forEach(([key, value]) => {
                 antdFormItem[key] = { value: key === 'enable' ? !!value : value }
             })
@@ -124,7 +120,7 @@ export default class Products extends React.Component {
             products: list,
             types,
             showEditModal: this.showEditModal,
-            loading: $loading[`${PRODUCT.LIST}`],
+            loading: $loading[PRODUCT.LIST],
             onDelete: this.handleDelete,
         }
         return (

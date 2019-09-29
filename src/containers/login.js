@@ -36,8 +36,7 @@ class Login extends React.Component {
                 <div className={styles.main}>
                     <div className={styles.logo}>
                         <Icon type="coffee" />
-                        {' '}
-Demo
+                        Demo
                     </div>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Item>

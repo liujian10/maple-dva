@@ -3,12 +3,12 @@ const themeConfig = require('./antd-theme.js')
 // const pxtorem = require('postcss-pxtorem')
 
 export default {
-    //    extraPostCSSPlugins: [
-    //        pxtorem({
-    //            rootValue: 75,
-    //            propWhiteList: [],
-    //        }),
-    //    ],
+    // extraPostCSSPlugins: [
+    //     pxtorem({
+    //         rootValue: 75,
+    //         propWhiteList: [],
+    //     }),
+    // ],
     // env: {
     //     development: {
     //         extraBabelPlugins: ["dva-hmr"]
