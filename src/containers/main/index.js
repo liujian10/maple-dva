@@ -1,13 +1,14 @@
 import React from 'react'
 import { renderRoutes } from 'react-router-config'
 import PropTypes from 'prop-types'
-import { Layout, Spin, message } from 'antd'
+import { Layout } from 'antd'
 import { URLS } from '@/common/config'
 import { hasChildInArr } from '@/common/util'
 import logo from '@/images/app/logo.svg'
 import Menu from '@/components/common/menu'
 import container from '@/common/container'
 import NoAuthority from '@/components/common/NoAuthority'
+import Loading from '@/components/common/loading'
 import ACTION, { namespace } from '@/models/app/actions'
 import { getAccessRoutes } from '@/common/routes'
 
@@ -42,8 +43,7 @@ class Main extends React.Component {
             if (!userName) {
                 this.gotoLogin()
             }
-        }).catch(err => {
-            message.error(err)
+        }).catch(() => {
             this.gotoLogin()
         })
     }
@@ -68,38 +68,40 @@ class Main extends React.Component {
         const visibleRoutes = getVisibleRoutes(accessRoutes)
         const hasSider = hasChildInArr(visibleRoutes)
         const marginLeft = (hasSider && (collapsed ? SIDE_FOLD_WIDTH : SIDE_UNFOLD_WIDTH)) || 0
-        return loading ? <Spin /> : (
-            <Layout>
-                <Header className={style.header}>
-                    <img src={logo} alt="狮平台" />
-                    {!!userName && (
-                        <>
-                            <div style={{ flex: 1, textAlign: 'right' }}>
-                                欢迎回来，
-                                {nickname || userName}
-                                ！
-                            </div>
-                            <div className={style.btn_logout} onClick={this.gotoLogin}>退出</div>
-                        </>
-                    )}
-                </Header>
-                <Content className={style.main}>
-                    {hasSider && (
-                        <Sider
-                            width={SIDE_UNFOLD_WIDTH}
-                            className={style.aside}
-                            collapsible={true}
-                            collapsed={collapsed}
-                            onCollapse={this.onCollapse}
-                        >
-                            <Menu menus={visibleRoutes} />
-                        </Sider>
-                    )}
-                    <div className={style.content} style={{ marginLeft }}>
-                        {hasSider ? renderRoutes(accessRoutes) : <NoAuthority />}
-                    </div>
-                </Content>
-            </Layout>
+        return (
+            <Loading loading={loading}>
+                <Layout>
+                    <Header className={style.header}>
+                        <img src={logo} alt="狮平台" />
+                        {!!userName && (
+                            <>
+                                <div style={{ flex: 1, textAlign: 'right' }}>
+                                    欢迎回来，
+                                    {nickname || userName}
+                                    ！
+                                </div>
+                                <div className={style.btn_logout} onClick={this.gotoLogin}>退出</div>
+                            </>
+                        )}
+                    </Header>
+                    <Content className={style.main}>
+                        {hasSider && (
+                            <Sider
+                                width={SIDE_UNFOLD_WIDTH}
+                                className={style.aside}
+                                collapsible={true}
+                                collapsed={collapsed}
+                                onCollapse={this.onCollapse}
+                            >
+                                <Menu menus={visibleRoutes} />
+                            </Sider>
+                        )}
+                        <div className={style.content} style={{ marginLeft }}>
+                            {hasSider ? renderRoutes(accessRoutes) : <NoAuthority />}
+                        </div>
+                    </Content>
+                </Layout>
+            </Loading>
         )
     }
 }

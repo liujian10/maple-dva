@@ -35,11 +35,9 @@ export default class Products extends React.Component {
     componentDidMount() {
         this.props.dispatch(PRODUCT.TYPES)
         this.props.dispatch(PRODUCT.LIST).then(([res, e]) => {
-            if (res) {
-                message.success('列表加载完成！')
-            } else {
-                message.error(e.message || e)
-            }
+            message.success('列表加载完成！')
+        }).catch(e => {
+            message.error(e.message || e)
         })
     }
 

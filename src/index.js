@@ -19,9 +19,7 @@ const app = dva({
 app.use(createLoading())
 
 // 3. Model
-Object.entries(models).forEach(([k, v]) => {
-    app.model(v.model)
-})
+Object.values(models).forEach(({ model }) => app.model(model))
 
 // 4. Router
 app.router(require('./router').default)
