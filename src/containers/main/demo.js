@@ -1,5 +1,6 @@
 import React from 'react'
 import QueueAnim from 'rc-queue-anim'
+import { Icon } from 'antd'
 import styles from './demo.styl'
 
 const ANIM_SWITCH = {
@@ -24,8 +25,8 @@ const ANIM_PUT_AWAY = {
 
 export default class Demo extends React.Component {
     state={
-        showContent: true,
-        showTool: false,
+        showContent: false,
+        showTool: true,
         animConfig: ANIM_SWITCH,
     }
 
@@ -71,13 +72,17 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <div className={styles.modal}>
-                    <div className={styles['modal-mask']} />
+                    <div className={styles['modal-mask']} style={{ display: showContent ? 'block' : 'none' }} />
                     <QueueAnim {...animProps}>
                         {showContent ? [
                             <div key="content" className={styles['modal-content']}>
                                 <div className={styles['modal-content-tool']}>
                                     <span onClick={this.handleClickNextContent}>Next</span>
-                                    <span onClick={this.handleClickHideContent}>》</span>
+                                    <Icon
+                                        type="arrow-right"
+                                        onClick={this.handleClickHideContent}
+                                        style={{ transform: 'rotate(41deg)' }}
+                                    />
                                 </div>
                                 <div className={styles['modal-content-text']}>内容</div>
                             </div>,
@@ -87,7 +92,11 @@ export default class Demo extends React.Component {
                 <QueueAnim {...toolAnimProps}>
                     {showTool && [
                         <div key="tool" className={styles.tool}>
-                            <span onClick={this.handleClickHideTool}>《</span>
+                            <Icon
+                                type="arrow-left"
+                                onClick={this.handleClickHideTool}
+                                style={{ transform: 'rotate(41deg)' }}
+                            />
                             标
                         </div>,
                     ]}
