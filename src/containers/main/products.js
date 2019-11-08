@@ -8,8 +8,7 @@ import AntdFormModal from '@/components/AntdFormModal'
 
 import styles from './products.styl'
 
-@container(false, namespace)
-export default class Products extends React.Component {
+class Products extends React.Component {
     static propTypes = {
         list: propTypes.array,
         types: propTypes.array,
@@ -117,3 +116,5 @@ export default class Products extends React.Component {
         )
     }
 }
+
+export default container(false, namespace)(Products)

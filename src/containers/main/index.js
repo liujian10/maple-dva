@@ -29,7 +29,6 @@ const getVisibleRoutes = routes => (Array.isArray(routes) && routes.length > 0 ?
         })
     }) : [])
 
-@container(false, namespace)
 class Main extends React.Component {
     static propTypes = {
         user: PropTypes.object.isRequired,
@@ -106,4 +105,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main
+export default container(false, namespace)(Main)
