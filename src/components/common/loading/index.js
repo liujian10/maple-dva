@@ -8,7 +8,7 @@ const Loading = ({
 }) => (loading ? (
     <div className={`${styles.loading} ${className}`} {...others}>
         <Spin size="large" />
-        <div className={styles.loading_text}>Loading...</div>
+        <div className={styles.loading_text}>加载中...</div>
     </div>
 ) : children)
 

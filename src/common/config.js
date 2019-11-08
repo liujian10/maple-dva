@@ -2,6 +2,20 @@ export const isDev = process.env.NODE_ENV !== 'production'
 
 export const isMock = isDev && true
 
+export const MOMENT_FMT_DATE = 'YYYY-MM-DD'
+export const MOMENT_FMT_DATE_MMDD = 'MM-DD'
+export const MOMENT_FMT_TIME = 'HH:mm:ss'
+export const MOMENT_FMT_HMS = 'HH:mm'
+export const MOMENT_FMT_YMD_HMS = 'YYYY-MM-DD HH:mm:ss'
+
+export const MOMENT_FORMAT = {
+    date: 'YYYY-MM-DD',
+    dateMD: 'YYYY-MM-DD',
+    time: 'HH:mm:ss',
+    timeHM: 'HH:mm',
+    dateTime: 'YYYY-MM-DD HH:mm:ss',
+}
+
 export const URLS = {
     login: '/login',
     logout: '/logout',

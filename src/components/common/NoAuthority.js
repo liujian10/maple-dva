@@ -1,9 +1,11 @@
 import React from 'react'
-import { Icon } from 'antd'
+import noAuthority from '@/images/page/noAuthority.png'
 
-export default props => (
-    <div style={{ color: '#333', display: 'flex', alignItems: 'flex-end' }}>
-        <Icon type="eye-invisible" theme="twoTone" style={{ fontSize: 80 }} />
-        <div style={{ fontSize: 30, marginLeft: 10 }}>No Authority</div>
+import style from './NoAuthority.styl'
+
+export default () => (
+    <div className={style.main}>
+        <img src={noAuthority} alt="noAuthority" />
+        <div>抱歉，您暂时无权限访问</div>
     </div>
 )

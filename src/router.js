@@ -6,15 +6,9 @@ import { renderRoutes } from 'react-router-config'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import routes from '@/common/routes'
 
-import styles from './routes.styl'
-
 const { ConnectedRouter } = routerRedux
 
-const View = hot(module)(() => (
-    <div className={styles.view}>
-        {renderRoutes(routes)}
-    </div>
-))
+const View = hot(module)(() => renderRoutes(routes))
 
 export default ({ history, ...others }) => (
     <ConnectedRouter history={history}>

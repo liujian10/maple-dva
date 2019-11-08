@@ -33,13 +33,12 @@ const ProductList = ({
         }, {
             title: 'Actions',
             dataIndex: 'id',
-            width: 320,
+            width: 100,
             render: (id, item) => (
                 <ButtonGroup>
-                    <Button icon="edit" onClick={() => { showEditModal('noform', item) }}>Noform</Button>
-                    <Button icon="edit" onClick={() => { showEditModal('antd', item) }}>Antd</Button>
+                    <Button icon="edit" onClick={() => { showEditModal('antd', item) }} />
                     <Popconfirm title={`Delete ${item.name}?`} onConfirm={() => onDelete(id)}>
-                        <Button icon="delete">Delete</Button>
+                        <Button icon="delete" />
                     </Popconfirm>
                 </ButtonGroup>
             ),

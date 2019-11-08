@@ -5,7 +5,6 @@ import PRODUCT, { namespace } from '@/models/products/actions'
 import container from '@/common/container'
 import ProductList from '@/components/ProductList'
 import AntdFormModal from '@/components/AntdFormModal'
-import NoformModal from '@/components/NoformModal'
 
 import styles from './products.styl'
 
@@ -26,18 +25,18 @@ export default class Products extends React.Component {
     }
 
     state = {
-        noformVisible: false,
         antdFormVisible: false,
-        noformItem: {},
         antdFormItem: {},
     }
 
     componentDidMount() {
         this.props.dispatch(PRODUCT.TYPES)
         this.props.dispatch(PRODUCT.LIST).then(([res, e]) => {
-            message.success('列表加载完成！')
-        }).catch(e => {
-            message.error(e.message || e)
+            if (res) {
+                message.success('列表加载完成！')
+            } else {
+                message.error(e.message || e)
+            }
         })
     }
 
@@ -59,26 +58,19 @@ export default class Products extends React.Component {
 
     showEditModal = (type, item = {}) => {
         const newState = {}
-        if (type === 'antd') {
-            const antdFormItem = {}
-            Object.entries(item).forEach(([key, value]) => {
-                antdFormItem[key] = { value: key === 'enable' ? !!value : value }
-            })
-            newState.antdFormItem = antdFormItem
-            newState.antdFormVisible = true
-        } else {
-            newState.noformItem = { ...item, enable: !!item.enable }
-            newState.noformVisible = true
-        }
+        const antdFormItem = {}
+        Object.entries(item).forEach(([key, value]) => {
+            antdFormItem[key] = { value: key === 'enable' ? !!value : value }
+        })
+        newState.antdFormItem = antdFormItem
+        newState.antdFormVisible = true
         this.setState(newState)
     }
 
     hideEditModal = () => {
         this.setState({
             antdFormVisible: false,
-            noformVisible: false,
             antdFormItem: {},
-            noformItem: {},
         })
     }
 
@@ -94,7 +86,7 @@ export default class Products extends React.Component {
         } = this.props
 
         const {
-            antdFormVisible, noformVisible, antdFormItem, noformItem,
+            antdFormVisible, antdFormItem,
         } = this.state
 
         const antdModalProps = {
@@ -102,14 +94,6 @@ export default class Products extends React.Component {
             types,
             visible: antdFormVisible,
             loading: submitLoading,
-            onChange: this.changedFields,
-            hideModal: this.hideEditModal,
-            handleSubmit: this.handleSubmit,
-        }
-        const noformModalProps = {
-            fields: noformItem,
-            types,
-            visible: noformVisible,
             onChange: this.changedFields,
             hideModal: this.hideEditModal,
             handleSubmit: this.handleSubmit,
@@ -122,15 +106,13 @@ export default class Products extends React.Component {
             onDelete: this.handleDelete,
         }
         return (
-            <div className={styles.container}>
+            <div>
                 <h2>List of Products</h2>
                 <div className={styles.tool}>
-                    <Button icon="plus" onClick={() => this.showEditModal('no-form')}>Noform</Button>
-                    <Button icon="plus" onClick={() => this.showEditModal('antd')} style={{ marginLeft: 10 }}>Antd</Button>
+                    <Button icon="plus" onClick={() => this.showEditModal('antd')} style={{ marginLeft: 10 }} />
                 </div>
                 <ProductList {...listProps} />
                 <AntdFormModal {...antdModalProps} />
-                <NoformModal {...noformModalProps} />
             </div>
         )
     }

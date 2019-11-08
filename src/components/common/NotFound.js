@@ -1,9 +1,17 @@
 import React from 'react'
-import { Icon } from 'antd'
+import { Link } from 'react-router-dom'
+import { Button } from 'antd'
+import NotFoundSvg from '@/images/page/not-found.svg'
 
-export default props => (
-    <div style={{ color: '#333', display: 'flex', alignItems: 'flex-end' }}>
-        <Icon type="bug" theme="twoTone" style={{ fontSize: 80 }} />
-        <div style={{ fontSize: 30, marginLeft: 10 }}>404</div>
+import styles from './NotFound.styl'
+
+export default () => (
+    <div className={styles.content}>
+        <img src={NotFoundSvg} alt="" />
+        <div>
+            <h1>404</h1>
+            <h3>页面不存在</h3>
+            <Link to="/"><Button type="primary">返回主页</Button></Link>
+        </div>
     </div>
 )

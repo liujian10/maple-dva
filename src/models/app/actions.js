@@ -3,7 +3,7 @@ import { mapAction } from '../../common/util'
 export const namespace = 'app'
 
 const actions = {
-    USER: 'app/user',
+    USER: 'json|app/user',
     LOGIN: 'app/login',
     LOGOUT: 'app/logout',
     SET_STATE: false,

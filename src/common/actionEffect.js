@@ -14,8 +14,10 @@ function* base(action, { payload }, { put, call }) {
 
 export const effectify = (v, handler = base, type = 'takeLatest') => {
     if (v.effect) {
+        // eslint-disable-next-line no-console
         console.log(`${v.type}'s effect already registered!`)
     } else {
+        // eslint-disable-next-line no-param-reassign
         v.effect = [
             function* fn(action, saga) {
                 try {
@@ -35,8 +37,10 @@ export const mapActionToEffect = (actions, effects = {}) => {
         if (typeof v === 'object') {
             mapActionToEffect(v, effects)
         } else if (v.effect) {
+            // eslint-disable-next-line no-param-reassign
             effects[k] = v.effect
         } else if (v.VAL) {
+            // eslint-disable-next-line no-param-reassign
             effects[k] = effectify(v)
         }
     })

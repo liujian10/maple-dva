@@ -72,7 +72,7 @@ class Main extends React.Component {
             <Loading loading={loading}>
                 <Layout>
                     <Header className={style.header}>
-                        <img src={logo} alt="狮平台" />
+                        <img src={logo} alt="Demo" />
                         {!!userName && (
                             <>
                                 <div style={{ flex: 1, textAlign: 'right' }}>

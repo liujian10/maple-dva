@@ -74,6 +74,7 @@ export const mapAction = (actionSet, prefix = []) => {
             fn.URL = v ? path2url(v).url : ''
             fn.OK = action.concat('OK').join('_')
             fn.NOK = action.concat('NOK').join('_')
+            // eslint-disable-next-line no-param-reassign
             obj[k] = fn
         }
     })
@@ -92,3 +93,35 @@ export const isEmptyVal = value => value === undefined || value === null || valu
  * @param {*} arr
  */
 export const hasChildInArr = arr => Array.isArray(arr) && arr.length > 0
+
+/**
+ * 获取小数点位数
+ * @eg '2.1' => 1
+ * @param {*} value
+ */
+export const getPointNumOfVal = value => {
+    const pointIndex = String(value).indexOf('.') + 1
+    return pointIndex > 0 ? String(value).length - pointIndex : 0
+}
+
+/**
+ * 数字小数位处理
+ * @eg 2.1 => '2.1'; (2.123, 2) => '2.12'
+ * @param {*} value
+ * @param {*} num 保留小数位数 默认2位
+ * @param {*} keepPoint 如果小数位数小于num，是否保留原小数位 默认保持
+ */
+export const numberToFixed = (value, num = 2, keepPoint = true) => {
+    if (keepPoint) {
+        const pi = getPointNumOfVal(value) > 2 ? 2 : getPointNumOfVal(value)
+        return pi ? parseFloat(value).toFixed(pi) : parseInt(value, 10)
+    }
+    return parseFloat(value).toFixed(num)
+}
+
+/**
+ * 数字本地化处理
+ * @ge 1234 => 1,234
+ * @param {*} value
+ */
+export const numberToLocaleString = value => String(value).replace(/\d+/, n => n.replace(/(\d)(?=(\d{3})+$)/g, $1 => `${$1},`))
