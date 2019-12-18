@@ -6,7 +6,7 @@ import { isMock, API_RULES } from './config'
  * 封装state hook使用逻辑
  * @param {*} obj
  */
-export const useState = obj => {
+export const useStates = obj => {
     const { values, sets } = Object.entries(obj).reduce((res, [k, v]) => {
         const [value, set] = us(v)
         res.values[k] = value

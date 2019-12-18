@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import moment from 'moment'
 import { Carousel } from 'antd'
-import { useState } from '@/common/util'
+import { useStates } from '@/common/util'
 import { MOMENT_FORMAT } from '@/common/config'
 import Chart, { formatChartData, getScaleMaxFromData } from '@/components/common/chart'
 
@@ -25,8 +25,9 @@ export const getRandomChartData = (length = 20, key) => {
 }
 
 const data = getRandomChartData(24)
+
 export default () => {
-    const state = useState({ data })
+    const state = useStates({ data })
     const max = getScaleMaxFromData(data, ['item1', 'item2', 'item3'])
 
     useEffect(() => {
