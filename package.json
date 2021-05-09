@@ -31,7 +31,7 @@
     "dva": "^2.4.0",
     "dva-loading": "^2.0.3",
     "history": "^4.9.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-hot-loader": "^4.12.12",
